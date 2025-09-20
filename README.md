@@ -10,3 +10,6 @@ Working state: bootstrap.
 
 ## Development
 - Kept the catalog verification command reproducible.
+
+## Usage
+- Rewrote the catalog explanation around the maintained behavior.
