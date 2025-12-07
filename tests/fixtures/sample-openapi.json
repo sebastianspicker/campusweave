@@ -5,9 +5,11 @@
   "scripts": {
     "build": "tsc --noEmit",
     "test": "vitest run",
-    "verify": "pnpm typecheck && pnpm test"
+    "verify": "pnpm typecheck && pnpm test",
+    "dev": "pnpm --silent test"
   },
   "keywords": [
-    "profile"
+    "profile",
+    "compiler"
   ]
 }
