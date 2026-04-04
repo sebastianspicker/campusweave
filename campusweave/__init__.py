@@ -9,3 +9,7 @@ def compiler_task() -> dict[str, str]:
     return {"scope": "compiler", "status": "ready"}
 
 # forced-compiler-3
+
+# current lane: integration
+def integration_pipeline() -> dict[str, str]:
+    return {"scope": "integration", "status": "ready"}
