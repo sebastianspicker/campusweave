@@ -12,12 +12,15 @@ Lifecycle stage: maintenance. Earlier setup detail now lives in maintained guida
 - Kept the catalog verification command reproducible.
 
 ## Usage
-- Rewrote the catalog explanation around the maintained behavior.
+- Made the compiler assumptions easier to check later.
+
+- The document now favors checked behavior over exploratory notes.
 
 ## Current Focus
 Prefer narrow maintenance work over broad rewrites.
 
 Use the next review to check behavior before adding surface area.
+Keep the next pass focused on verification and smaller changes.
 ## Reliability
 - Removed one failure mode from the compiler path.
 
