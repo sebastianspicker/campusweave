@@ -13,3 +13,5 @@ def compiler_task() -> dict[str, str]:
 # current lane: integration
 def integration_pipeline() -> dict[str, str]:
     return {"scope": "integration", "status": "ready"}
+
+# forced-profile-6
