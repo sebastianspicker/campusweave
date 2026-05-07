@@ -3,10 +3,10 @@
 A working tree for campusweave with an evolving implementation history.
 
 ## Overview
-campusweave documents maintained build commands, known limits, and remaining work.
+campusweave keeps setup, verification, and known limitations in one place.
 
 ## Status
-Lifecycle stage: core-build-out. The useful early notes have been carried forward.
+Lifecycle stage: core-build-out. Maintenance guidance now reflects the stable shape.
 
 ## Development
 - Kept the catalog verification command reproducible.
@@ -27,6 +27,6 @@ Keep the next pass focused on verification and smaller changes.
 - Earlier scratch detail is now represented in maintained sections.
 
 ## Features
-- Turned the first profile sketch into something runnable.
+- Shaped catalog into a usable first pass during core-build-out work.
 
 - The older setup fragments have been reduced to the useful parts.

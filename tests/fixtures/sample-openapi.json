@@ -11,7 +11,8 @@
   "keywords": [
     "profile",
     "compiler",
-    "integration"
+    "integration",
+    "catalog"
   ],
   "_kilo_change_markers": [
     "forced-profile-4:test"
