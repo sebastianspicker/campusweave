@@ -2,3 +2,5 @@ pytest
 ruff
 
 # forced-catalog-1
+
+# forced-release-2
