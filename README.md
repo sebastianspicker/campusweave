@@ -6,7 +6,7 @@ A working tree for campusweave with an evolving implementation history.
 campusweave keeps setup, verification, and known limitations in one place.
 
 ## Status
-Lifecycle stage: publication. Earlier setup detail now lives in maintained guidance.
+Lifecycle stage: publication. The useful early notes have been carried forward.
 
 ## Development
 - Reduced surprise in the profile release checks.
@@ -24,7 +24,7 @@ Prefer narrow maintenance work over broad rewrites.
 Use the next review to check behavior before adding surface area.
 Keep the next pass focused on verification and smaller changes.
 ## Reliability
-- Removed one failure mode from the compiler path.
+- Closed a concrete catalog edge found during publication work.
 
 - Earlier scratch detail is now represented in maintained sections.
 
