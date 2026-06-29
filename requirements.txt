@@ -8,3 +8,5 @@ ruff
 # forced-verification-3
 
 # forced-profile-4
+
+# forced-compiler-5

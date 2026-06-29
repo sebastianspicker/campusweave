@@ -3,13 +3,13 @@
 A working tree for campusweave with an evolving implementation history.
 
 ## Overview
-campusweave keeps setup, verification, and known limitations in one place.
+campusweave records the stable project shape and the work still worth checking.
 
 ## Status
-Lifecycle stage: publication. The useful early notes have been carried forward.
+Lifecycle stage: publication. Earlier setup detail now lives in maintained guidance.
 
 ## Development
-- Reduced surprise in the profile release checks.
+- Aligned local and CI checks for compiler.
 
 - Earlier scratch detail is now represented in maintained sections.
 
