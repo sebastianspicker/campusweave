@@ -1,11 +1,41 @@
-name: verify
-on:
+---
+name: CampusWeave CI
+
+"on":
   push:
-    branches: [dev]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: campusweave-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - run: git status --short
-verification: publication
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Python tests
+        run: python3 -m unittest discover -s tests -v
+      - name: CampusWeave JavaScript tests
+        run: node --test tests/test_campusweave_ui.mjs
+      - name: Static syntax and machine docs
+        run: |
+          node --check web/app.js
+          node --check web/model.mjs
+          node --check web/views.mjs
+          python3 -m py_compile scripts/render_relution_openapi.py
+          python3 -m py_compile scripts/validate_machine_docs.py
+          python3 scripts/validate_machine_docs.py
+          zsh -n scripts/relution_curl.zsh
+          zsh -n scripts/capture_campusweave_screenshots.zsh

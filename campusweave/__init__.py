@@ -1,17 +1,5 @@
-"""Package exports."""
+"""Loopback-only, offline planner surface for university Relution profiles."""
 
-# current lane: profile
-def profile_pipeline() -> dict[str, str]:
-    return {"scope": "profile", "status": "ready"}
+from .service import CampusWeaveServer, create_server
 
-# current lane: compiler
-def compiler_task() -> dict[str, str]:
-    return {"scope": "compiler", "status": "ready"}
-
-# forced-compiler-3
-
-# current lane: integration
-def integration_pipeline() -> dict[str, str]:
-    return {"scope": "integration", "status": "ready"}
-
-# forced-profile-6
+__all__ = ["CampusWeaveServer", "create_server"]
