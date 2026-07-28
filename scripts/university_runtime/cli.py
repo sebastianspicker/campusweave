@@ -4,12 +4,12 @@ from __future__ import annotations
 
 import argparse
 import json
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
 import university_profile
+import validate_machine_docs
 from strict_json import load_strict_json
 
 from .io import atomic_write_json, load_json_with_sha256, strict_load_json
@@ -206,16 +206,12 @@ def _contract_check(args: argparse.Namespace) -> int:
         if not isinstance(document, Mapping):
             print(f"error: {path}: {label} root must be a JSON object", file=sys.stderr)
             return 1
-    command = [
-        sys.executable,
-        str(SCRIPT_ROOT / "validate_machine_docs.py"),
+    return validate_machine_docs.main([
         "--spec",
         str(args.spec),
         "--catalog",
         str(args.catalog),
-    ]
-    completed = subprocess.run(command, cwd=REPOSITORY_ROOT, check=False)
-    return completed.returncode
+    ])
 
 
 def _target_validate(args: argparse.Namespace) -> int:
@@ -256,6 +252,15 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
         description="Validate and compile strictly offline CampusWeave runtime artifacts."
     )
     commands = parser.add_subparsers(dest="command", required=True)
+    _add_profile_commands(commands)
+    _add_plan_commands(commands)
+    _add_dry_run_command(commands)
+    _add_target_commands(commands)
+    _add_contract_commands(commands)
+    return parser.parse_args(argv)
+
+
+def _add_profile_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
 
     profile = commands.add_parser("profile", help="work with commit-safe university profiles")
     profile_commands = profile.add_subparsers(dest="profile_command", required=True)
@@ -273,6 +278,8 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     instantiate.add_argument("--output", type=Path, required=True)
     instantiate.set_defaults(handler=_profile_instantiate)
 
+
+def _add_plan_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     plan = commands.add_parser("plan", help="compile or validate an offline execution-intent plan")
     plan_commands = plan.add_subparsers(dest="plan_command", required=True)
     build = plan_commands.add_parser("build")
@@ -289,6 +296,8 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     )
     validate_plan.set_defaults(handler=_plan_validate)
 
+
+def _add_dry_run_command(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     dry_run = commands.add_parser("dry-run", help="verify and render a plan without HTTP")
     _add_profile_options(dry_run)
     dry_run.add_argument("--plan", type=Path, required=True)
@@ -299,6 +308,8 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     )
     dry_run.set_defaults(handler=_dry_run)
 
+
+def _add_target_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     target = commands.add_parser("target", help="validate a private digest-bound target context")
     target_commands = target.add_subparsers(dest="target_command", required=True)
     target_validate = target_commands.add_parser("validate")
@@ -306,13 +317,14 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     target_validate.add_argument("--context", type=Path, required=True)
     target_validate.set_defaults(handler=_target_validate)
 
+
+def _add_contract_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) -> None:
     contract = commands.add_parser("contract", help="check an exact target catalog offline")
     contract_commands = contract.add_subparsers(dest="contract_command", required=True)
     check = contract_commands.add_parser("check")
     check.add_argument("--spec", type=Path, required=True)
     check.add_argument("--catalog", type=Path, required=True)
     check.set_defaults(handler=_contract_check)
-    return parser.parse_args(argv)
 
 
 def main(argv: Iterable[str] | None = None) -> int:

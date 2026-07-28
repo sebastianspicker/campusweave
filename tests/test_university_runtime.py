@@ -53,9 +53,9 @@ class UniversityRuntimeTests(unittest.TestCase):
 
     @staticmethod
     def _write_private_json(path: Path, value: object) -> str:
-        payload = (
-            json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
-        ).encode("utf-8")
+        payload = (json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode(
+            "utf-8"
+        )
         path.write_bytes(payload)
         os.chmod(path, 0o600)
         return hashlib.sha256(payload).hexdigest()
@@ -72,8 +72,7 @@ class UniversityRuntimeTests(unittest.TestCase):
         profile_sha256 = self._write_private_json(profile_path, self.profile)
 
         workflow_index = {
-            workflow["workflow_id"]: workflow
-            for workflow in self.profile["api_workflows"]
+            workflow["workflow_id"]: workflow for workflow in self.profile["api_workflows"]
         }
         profile_pairs = {
             (concept, workflow["workflow_id"])
@@ -157,8 +156,7 @@ class UniversityRuntimeTests(unittest.TestCase):
                             "location": "token",
                             "name": None,
                             "operation_keys": [
-                                reference["operation_key"]
-                                for reference in operation_references
+                                reference["operation_key"] for reference in operation_references
                             ],
                             "source_contract_verified": True,
                         }
@@ -271,7 +269,8 @@ class UniversityRuntimeTests(unittest.TestCase):
             },
             "evidence_root": artifacts.name,
             "stop_reasons": [
-                "Evidence binding does not prove operation-role semantics, authorize execution, or provide request bodies."
+                "Evidence binding does not prove operation-role semantics, authorize execution, "
+                "or provide request bodies."
             ],
         }
         context_path = root / "target.json"
@@ -326,7 +325,9 @@ class UniversityRuntimeTests(unittest.TestCase):
             self.assertEqual(stat.S_IMODE(output.stat().st_mode), 0o600)
 
             stdout = io.StringIO()
-            with mock.patch.object(subprocess, "run", side_effect=AssertionError("subprocess forbidden")):
+            with mock.patch.object(
+                subprocess, "run", side_effect=AssertionError("subprocess forbidden")
+            ):
                 with redirect_stdout(stdout):
                     result = cli.main(["dry-run", "--plan", str(output)])
 
@@ -392,11 +393,14 @@ class UniversityRuntimeTests(unittest.TestCase):
                     spec = malformed if filename == "spec.json" else counterpart
                     catalog = malformed if filename == "catalog.json" else counterpart
                     stderr = io.StringIO()
-                    with mock.patch.object(
-                        subprocess,
-                        "run",
-                        side_effect=AssertionError("subprocess must not run"),
-                    ), redirect_stderr(stderr):
+                    with (
+                        mock.patch.object(
+                            subprocess,
+                            "run",
+                            side_effect=AssertionError("subprocess must not run"),
+                        ),
+                        redirect_stderr(stderr),
+                    ):
                         result = cli.main(
                             [
                                 "contract",
@@ -420,8 +424,15 @@ class UniversityRuntimeTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertEqual(profile["package"]["package_id"], "example-u-relution-desired-state-v1")
         self.assertEqual(profile["organization_units"][0]["unit_id"], "ou.example-u")
-        self.assertTrue(all(item["policy_id"].startswith("example-u-policy.") for item in profile["policy_units"]))
-        self.assertTrue(all(item["workflow_id"].startswith("example-u.") for item in profile["api_workflows"]))
+        self.assertTrue(
+            all(
+                item["policy_id"].startswith("example-u-policy.")
+                for item in profile["policy_units"]
+            )
+        )
+        self.assertTrue(
+            all(item["workflow_id"].startswith("example-u.") for item in profile["api_workflows"])
+        )
         self.assertEqual(profile["commit_boundary"]["target_local_root"], "private/example-u")
 
     def test_instantiation_enforces_institution_namespace_bounds(self) -> None:
@@ -586,9 +597,7 @@ class UniversityRuntimeTests(unittest.TestCase):
                     {**copy.deepcopy(read_reference), "role": role}
                     for role in record["required_roles"]
                 ]
-                record["scope_bindings"][0]["operation_keys"] = [
-                    read_reference["operation_key"]
-                ]
+                record["scope_bindings"][0]["operation_keys"] = [read_reference["operation_key"]]
             context["bindings"]["sha256"] = self._write_private_json(
                 bindings_path,
                 bindings,
@@ -639,7 +648,9 @@ class UniversityRuntimeTests(unittest.TestCase):
             self.assertIn("role 'create' requires one of POST, PUT, not 'DELETE'", joined)
             self.assertIn("role 'delete' requires one of DELETE, not 'POST'", joined)
 
-    def test_evidence_bound_target_context_rejects_non_object_catalog_without_crashing(self) -> None:
+    def test_evidence_bound_target_context_rejects_non_object_catalog_without_crashing(
+        self,
+    ) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             context, context_path, profile_path = self._evidence_bound_target_fixture(
                 Path(temporary)
@@ -732,13 +743,17 @@ class UniversityRuntimeTests(unittest.TestCase):
             errors = validate_target_context(document, context_path, self.profile, PROFILE_PATH)
 
             joined = "\n".join(errors)
-            self.assertIn("$.profile.path: must be a normalized traversal-free relative path", joined)
             self.assertIn(
-                "$.target.authorized_origin: must be an HTTPS origin without credentials, path, query, or fragment",
+                "$.profile.path: must be a normalized traversal-free relative path", joined
+            )
+            self.assertIn(
+                "$.target.authorized_origin: must be an HTTPS origin without credentials, "
+                "path, query, or fragment",
                 joined,
             )
             self.assertIn(
-                "$.target.effective_api_server: must be an HTTPS origin without credentials, path, query, or fragment",
+                "$.target.effective_api_server: must be an HTTPS origin without credentials, "
+                "path, query, or fragment",
                 joined,
             )
 
@@ -758,6 +773,7 @@ class UniversityRuntimeTests(unittest.TestCase):
         errors = validate_execution_plan(plan, self.profile, self.profile_digest)
 
         self.assertNotIn("$.steps: dependency graph contains a cycle", errors)
+
 
 if __name__ == "__main__":
     unittest.main()
