@@ -58,11 +58,15 @@ class CampusWeaveTests(unittest.TestCase):
         self.assertEqual(response["source_profile_filename"], "desired-state.json")
         self.assertNotEqual(response["profile_sha256"], response["source_profile_sha256"])
         self.assertEqual(
-            validate_execution_plan(response["plan"], response["profile"], response["profile_sha256"]),
+            validate_execution_plan(
+                response["plan"], response["profile"], response["profile_sha256"]
+            ),
             [],
         )
         self.assertTrue(
-            validate_execution_plan(response["plan"], response["profile"], response["source_profile_sha256"])
+            validate_execution_plan(
+                response["plan"], response["profile"], response["source_profile_sha256"]
+            )
         )
         self.assertFalse(response["dry_run"]["execution_authorized"])
         self.assertFalse(response["dry_run"]["network_capable"])
@@ -80,34 +84,68 @@ class CampusWeaveTests(unittest.TestCase):
             self.assertEqual(headers["Cache-Control"], "no-store")
             self.assertIn("default-src 'self'", headers["Content-Security-Policy"])
 
-            status, _, _ = self._request(port, "GET", "/api/v1/reference", headers={"Host": "evil.invalid"})
-            self.assertEqual(status, 403)
-            status, _, _ = self._request(port, "GET", "/api/v1/reference", headers={"Host": "localhost:8766", "Origin": "https://evil.invalid"})
+            status, _, _ = self._request(
+                port, "GET", "/api/v1/reference", headers={"Host": "evil.invalid"}
+            )
             self.assertEqual(status, 403)
             status, _, _ = self._request(
                 port,
                 "GET",
                 "/api/v1/reference",
-                headers={"Host": "localhost:8766", "Sec-Fetch-Site": "cross-site", "Sec-Fetch-Mode": "cors"},
+                headers={"Host": "localhost:8766", "Origin": "https://evil.invalid"},
+            )
+            self.assertEqual(status, 403)
+            status, _, _ = self._request(
+                port,
+                "GET",
+                "/api/v1/reference",
+                headers={
+                    "Host": "localhost:8766",
+                    "Sec-Fetch-Site": "cross-site",
+                    "Sec-Fetch-Mode": "cors",
+                },
             )
             self.assertEqual(status, 403)
 
-            profile = json.dumps(self.reference["profile"]).encode()
             status, _, body = self._request(
-                port, "POST", "/api/v1/compile-profile", json.dumps({"profile": self.reference["profile"]}).encode(),
+                port,
+                "POST",
+                "/api/v1/compile-profile",
+                json.dumps({"profile": self.reference["profile"]}).encode(),
                 {**allowed, "Content-Type": "application/json"},
             )
             self.assertEqual(status, 200)
-            self.assertEqual(json.loads(body)["profile_sha256"], service.canonical_sha256(self.reference["profile"]))
+            self.assertEqual(
+                json.loads(body)["profile_sha256"],
+                service.canonical_sha256(self.reference["profile"]),
+            )
 
             duplicate = b'{"profile":{},"profile":{}}'
-            status, _, _ = self._request(port, "POST", "/api/v1/compile-profile", duplicate, {**allowed, "Content-Type": "application/json"})
+            status, _, _ = self._request(
+                port,
+                "POST",
+                "/api/v1/compile-profile",
+                duplicate,
+                {**allowed, "Content-Type": "application/json"},
+            )
             self.assertEqual(status, 400)
             imported_duplicate = b'{"package":{},"package":{}}'
-            status, _, _ = self._request(port, "POST", "/api/v1/import-profile", imported_duplicate, {**allowed, "Content-Type": "application/json"})
+            status, _, _ = self._request(
+                port,
+                "POST",
+                "/api/v1/import-profile",
+                imported_duplicate,
+                {**allowed, "Content-Type": "application/json"},
+            )
             self.assertEqual(status, 400)
             nan = b'{"profile":NaN}'
-            status, _, _ = self._request(port, "POST", "/api/v1/compile-profile", nan, {**allowed, "Content-Type": "application/json"})
+            status, _, _ = self._request(
+                port,
+                "POST",
+                "/api/v1/compile-profile",
+                nan,
+                {**allowed, "Content-Type": "application/json"},
+            )
             self.assertEqual(status, 400)
             status, headers, _ = self._request(port, "PUT", "/api/v1/reference", headers=allowed)
             self.assertEqual(status, 405)
@@ -126,10 +164,16 @@ class CampusWeaveTests(unittest.TestCase):
                 "institution_code": "example-u",
                 "institution_label": "Example University",
             }
-            status, _, body = self._request(port, "POST", "/api/v1/instantiate-profile", json.dumps(request).encode(), headers)
+            status, _, body = self._request(
+                port, "POST", "/api/v1/instantiate-profile", json.dumps(request).encode(), headers
+            )
             self.assertEqual(status, 200)
-            self.assertEqual(json.loads(body)["profile"]["package"]["institution_code"], "example-u")
-            status, _, _ = self._request(port, "GET", "/missing.js", headers={"Host": "localhost:8766"})
+            self.assertEqual(
+                json.loads(body)["profile"]["package"]["institution_code"], "example-u"
+            )
+            status, _, _ = self._request(
+                port, "GET", "/missing.js", headers={"Host": "localhost:8766"}
+            )
             self.assertEqual(status, 404)
             status, response_headers, body = self._request(
                 port, "GET", "/app.js", headers={"Host": "localhost:8766"}
@@ -175,8 +219,15 @@ class CampusWeaveTests(unittest.TestCase):
                 self.assertEqual(accepted.gettimeout(), service.CONNECTION_TIMEOUT_SECONDS)
             finally:
                 accepted.close()
-            self.assertEqual(service.CampusWeaveServer.request_queue_size, service.MAX_CONCURRENT_REQUESTS)
-            self.assertTrue(all(server._request_slots.acquire(blocking=False) for _ in range(service.MAX_CONCURRENT_REQUESTS)))
+            self.assertEqual(
+                service.CampusWeaveServer.request_queue_size, service.MAX_CONCURRENT_REQUESTS
+            )
+            self.assertTrue(
+                all(
+                    server._request_slots.acquire(blocking=False)
+                    for _ in range(service.MAX_CONCURRENT_REQUESTS)
+                )
+            )
             self.assertFalse(server._request_slots.acquire(blocking=False))
             for _ in range(service.MAX_CONCURRENT_REQUESTS):
                 server._request_slots.release()
@@ -264,7 +315,11 @@ class CampusWeaveTests(unittest.TestCase):
             package["untrusted_secret_field"] = "do-not-reflect-this-credential"
             invalid["package"] = package
             status, _, body = self._request(
-                port, "POST", "/api/v1/compile-profile", json.dumps({"profile": invalid}).encode(), headers
+                port,
+                "POST",
+                "/api/v1/compile-profile",
+                json.dumps({"profile": invalid}).encode(),
+                headers,
             )
             result = json.loads(body)
             self.assertEqual(status, 400)
@@ -282,12 +337,20 @@ class CampusWeaveTests(unittest.TestCase):
             units = [dict(item) for item in changed["organization_units"]]
             units[1]["label"] = "opaque target value"
             changed["organization_units"] = units
-            status, _, body = self._request(port, "POST", "/api/v1/import-profile", json.dumps(changed).encode(), headers)
+            status, _, body = self._request(
+                port, "POST", "/api/v1/import-profile", json.dumps(changed).encode(), headers
+            )
             self.assertEqual(status, 400)
             self.assertEqual(json.loads(body)["details"][0]["path"], "$")
 
-            request = {"profile": self.reference["profile"], "institution_code": "INVALID_CODE", "institution_label": "Example"}
-            status, _, body = self._request(port, "POST", "/api/v1/instantiate-profile", json.dumps(request).encode(), headers)
+            request = {
+                "profile": self.reference["profile"],
+                "institution_code": "INVALID_CODE",
+                "institution_label": "Example",
+            }
+            status, _, body = self._request(
+                port, "POST", "/api/v1/instantiate-profile", json.dumps(request).encode(), headers
+            )
             self.assertEqual(status, 400)
             self.assertEqual(json.loads(body)["details"][0]["path"], "$.institution_code")
 

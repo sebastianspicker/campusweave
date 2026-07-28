@@ -92,6 +92,21 @@ class CampusWeaveInputError(ValueError):
         self.details = details or [{"path": "$", "message": "request is not valid"}]
 
 
+def _validation_message(error: str) -> str:
+    """Return the safe category for one validation error."""
+
+    lowered = error.lower()
+    if "missing keys" in lowered or "required" in lowered:
+        return "a required field is missing"
+    if "unknown keys" in lowered:
+        return "an unknown field is not allowed"
+    if "forbidden" in lowered:
+        return "value is not permitted in a commit-safe profile"
+    if "reference" in lowered:
+        return "reference does not resolve within the profile"
+    return "value does not satisfy the offline university contract"
+
+
 def _safe_validation_details(errors: list[str]) -> list[dict[str, str]]:
     """Keep field locations while never reflecting supplied keys or values."""
 
@@ -100,18 +115,7 @@ def _safe_validation_details(errors: list[str]) -> list[dict[str, str]]:
         raw_path, separator, raw_message = error.partition(":")
         path_match = SAFE_DETAIL_PATH.match(raw_path) if separator and len(raw_path) <= 256 else None
         path = path_match.group(0) if path_match else "$"
-        lowered = raw_message.lower()
-        if "missing keys" in lowered or "required" in lowered:
-            message = "a required field is missing"
-        elif "unknown keys" in lowered:
-            message = "an unknown field is not allowed"
-        elif "forbidden" in lowered:
-            message = "value is not permitted in a commit-safe profile"
-        elif "reference" in lowered:
-            message = "reference does not resolve within the profile"
-        else:
-            message = "value does not satisfy the offline university contract"
-        details.append({"path": path, "message": message})
+        details.append({"path": path, "message": _validation_message(raw_message)})
     return details or [{"path": "$", "message": "profile does not satisfy the offline university contract"}]
 
 
@@ -260,6 +264,58 @@ def _origin_is_allowed(value: str) -> bool:
     )
 
 
+def _compile_profile_request(request: Any) -> dict[str, Any]:
+    """Compile the explicitly wrapped profile request."""
+
+    if not isinstance(request, Mapping):
+        raise CampusWeaveInputError("request must be an object")
+    if set(request) != {"profile"}:
+        raise CampusWeaveInputError("unexpected request shape")
+    return compile_profile(request["profile"])
+
+
+def _identity_failure_details(failure: str) -> list[dict[str, str]]:
+    """Return a safe field-specific error for an invalid institution identity."""
+
+    if failure.startswith("institution code"):
+        return [{"path": "$.institution_code", "message": "must use at most 48 lowercase letters, digits, or hyphens"}]
+    if failure.startswith("institution label"):
+        return [{"path": "$.institution_label", "message": "must contain 1 through 200 non-whitespace characters"}]
+    return [{"path": "$.profile", "message": "must be a supported reference-derived profile"}]
+
+
+def _instantiate_profile_request(request: Any) -> dict[str, Any]:
+    """Instantiate and compile the explicitly shaped identity request."""
+
+    if not isinstance(request, Mapping):
+        raise CampusWeaveInputError("request must be an object")
+    if set(request) != {"profile", "institution_code", "institution_label"}:
+        raise CampusWeaveInputError("unexpected request shape")
+    profile = request["profile"]
+    code = request["institution_code"]
+    label = request["institution_label"]
+    if not isinstance(profile, Mapping):
+        raise CampusWeaveInputError("profile must be an object")
+    if not isinstance(code, str) or not isinstance(label, str):
+        raise CampusWeaveInputError("institution identity must be strings")
+    try:
+        return compile_profile(instantiate_profile(profile, code, label))
+    except ValueError as exc:
+        raise CampusWeaveInputError(
+            "institution identity is not valid", _identity_failure_details(str(exc))
+        ) from exc
+
+
+def _compile_endpoint_request(path: str, request: Any) -> dict[str, Any]:
+    """Run the validated compiler for one fixed profile endpoint."""
+
+    if path == "/api/v1/compile-profile":
+        return _compile_profile_request(request)
+    if path == "/api/v1/import-profile":
+        return compile_profile(request)
+    return _instantiate_profile_request(request)
+
+
 class CampusWeaveServer(ThreadingHTTPServer):
     """A server whose address is fixed to the IPv4 loopback interface."""
 
@@ -321,10 +377,10 @@ class CampusWeaveHandler(BaseHTTPRequestHandler):
     server_version = "CampusWeave"
     sys_version = ""
 
-    def log_message(self, format: str, *args: object) -> None:  # noqa: A002
+    def log_message(self, *message_parts: object) -> None:
         """Do not write request data to logs."""
 
-        _ = format, args
+        _ = message_parts
 
     def do_GET(self) -> None:  # noqa: N802
         self._dispatch("GET")
@@ -468,46 +524,7 @@ class CampusWeaveHandler(BaseHTTPRequestHandler):
             self._error(HTTPStatus.NOT_FOUND, "not_found")
             return
         try:
-            request = self._read_json_body()
-            if path == "/api/v1/compile-profile":
-                if not isinstance(request, Mapping):
-                    raise CampusWeaveInputError("request must be an object")
-                if set(request) != {"profile"}:
-                    raise CampusWeaveInputError("unexpected request shape")
-                response = compile_profile(request["profile"])
-            elif path == "/api/v1/import-profile":
-                response = compile_profile(request)
-            else:
-                if not isinstance(request, Mapping):
-                    raise CampusWeaveInputError("request must be an object")
-                if set(request) != {"profile", "institution_code", "institution_label"}:
-                    raise CampusWeaveInputError("unexpected request shape")
-                if not isinstance(request["profile"], Mapping):
-                    raise CampusWeaveInputError("profile must be an object")
-                if not isinstance(request["institution_code"], str) or not isinstance(request["institution_label"], str):
-                    raise CampusWeaveInputError("institution identity must be strings")
-                try:
-                    instantiated = instantiate_profile(
-                        request["profile"],
-                        request["institution_code"],
-                        request["institution_label"],
-                    )
-                except ValueError as exc:
-                    failure = str(exc)
-                    if failure.startswith("institution code"):
-                        path = "$.institution_code"
-                        message = "must use at most 48 lowercase letters, digits, or hyphens"
-                    elif failure.startswith("institution label"):
-                        path = "$.institution_label"
-                        message = "must contain 1 through 200 non-whitespace characters"
-                    else:
-                        path = "$.profile"
-                        message = "must be a supported reference-derived profile"
-                    raise CampusWeaveInputError(
-                        "institution identity is not valid",
-                        [{"path": path, "message": message}],
-                    ) from exc
-                response = compile_profile(instantiated)
+            response = _compile_endpoint_request(path, self._read_json_body())
         except CampusWeaveInputError as exc:
             self._error(HTTPStatus.BAD_REQUEST, "invalid_request", exc.details)
             return
