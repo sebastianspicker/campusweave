@@ -18,7 +18,9 @@ ALLOWED_URL = f"{SERVER}/api/test"
 
 
 class RelutionCurlHelperTests(unittest.TestCase):
-    def run_helper(self, *arguments: str, path: str | None = None) -> subprocess.CompletedProcess[str]:
+    def run_helper(
+        self, *arguments: str, path: str | None = None
+    ) -> subprocess.CompletedProcess[str]:
         environment = os.environ.copy()
         if path is not None:
             environment["PATH"] = f"{path}{os.pathsep}{environment['PATH']}"
@@ -27,8 +29,7 @@ class RelutionCurlHelperTests(unittest.TestCase):
             "typeset -g +x RELUTION_API_TOKEN; "
             f"RELUTION_API_TOKEN={shlex.quote(DUMMY_TOKEN)}; "
             f"RELUTION_API_SERVER={shlex.quote(SERVER)}; "
-            "relution_curl "
-            + " ".join(shlex.quote(argument) for argument in arguments)
+            "relution_curl " + " ".join(shlex.quote(argument) for argument in arguments)
         )
         return subprocess.run(
             ["zsh", "-fc", shell_program],
@@ -63,7 +64,11 @@ class RelutionCurlHelperTests(unittest.TestCase):
                     assert stat.S_ISFIFO(os.fstat(0).st_mode), "curl stdin is not a pipe"
                     assert sys.stdin.read() == f'header = "X-User-Access-Token: {{token}}"\\n'
                     assert sys.argv[1:8] == ["--disable", "--config", "-", "--globoff", "--noproxy", "*", "--fail-with-body"]
-                    assert sys.argv[8:] == ["--silent", "--show-error", "--connect-timeout", "10", "--max-time", "60", "--request", "GET", "--header", "Accept: application/json", {ALLOWED_URL!r}]
+                    assert sys.argv[8:] == [
+                        "--silent", "--show-error", "--connect-timeout", "10",
+                        "--max-time", "60", "--request", "GET", "--header",
+                        "Accept: application/json", {ALLOWED_URL!r},
+                    ]
                     assert all(token not in argument for argument in sys.argv)
                     assert all(token not in value for value in os.environ.values())
                     print("pipe-auth-ok")
