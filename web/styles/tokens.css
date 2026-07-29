@@ -30,6 +30,7 @@
   --weave-a: rgb(31 79 122);
   --weave-b: rgb(42 122 102);
   --top-height: 56px;
+  --demo-height: 38px;
   --journey-height: 72px;
   --status-height: 40px;
   --inspector-width: minmax(360px, 0.92fr);

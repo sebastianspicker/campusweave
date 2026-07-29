@@ -34,7 +34,7 @@ export function renderStart(state) {
         <p>The active draft is a reference-derived public design. Only the institution name and namespace are user-supplied; the local compiler produces an inert, digest-bound plan.</p>
         <div class="button-row">
           <button class="button primary" data-action="navigate" data-step="institution">Begin review ${icon('chevron')}</button>
-          <button class="button secondary" data-action="use-reference" ${state.busy ? 'disabled' : ''}>Reset to reference</button>
+          <button class="button secondary" data-action="use-reference" ${state.busy ? 'disabled' : ''}>${state.demoMode ? 'Reset demo fixture' : 'Reset to reference'}</button>
         </div>
       </div>
       <dl class="start-summary">
@@ -66,7 +66,7 @@ export function renderInstitution(state) {
       <label><span>Institution name</span><input data-institution-field name="institution_label" maxlength="200" pattern=".*[^ ].*" title="Enter a nonblank institution name" required value="${escapeHtml(draft.institution_label)}" autocomplete="off" ${state.busy ? 'disabled' : ''}><small>Human-readable label used throughout the portable design. Do not enter secrets or target identifiers.</small></label>
       <label><span>Institution code</span><input data-institution-field name="institution_code" maxlength="48" pattern="[a-z0-9](?:[a-z0-9]|-)*" required value="${escapeHtml(draft.institution_code)}" autocomplete="off" spellcheck="false" ${state.busy ? 'disabled' : ''}><small>Lowercase namespace used to rebind every institution-owned policy and workflow ID.</small></label>
       <div class="form-boundary"><span>${icon('lock')}</span><p><strong>Commit-safe only</strong>No URL, organization UUID, user data, or credential field can be added through this interface.</p></div>
-      <div class="form-actions"><button class="button primary" type="submit" ${state.busy ? 'disabled' : ''}>Save institution</button><p class="form-status ${dirty ? 'is-dirty' : ''}" data-form-status role="status">${dirty ? 'Unsaved changes. Save the institution before continuing.' : 'Institution matches the validated local draft.'}</p></div>
+      <div class="form-actions"><button class="button primary" type="submit" ${state.busy ? 'disabled' : ''}>${state.demoMode ? 'Simulate save' : 'Save institution'}</button><p class="form-status ${dirty ? 'is-dirty' : ''}" data-form-status role="status">${dirty ? 'Unsaved changes. Save the institution before continuing.' : 'Institution matches the validated local draft.'}</p></div>
     </form>
   </section>`
 }
@@ -207,15 +207,15 @@ export function renderReadiness(state) {
       </div>
     </section>
     <section class="handoff-dock" aria-labelledby="handoff-dock-title">
-      <div class="dock-digest"><span>${icon('shield')}</span><div><strong>Evidence SHA-256</strong><code>${escapeHtml(state.bundle.profile_sha256 || '')}</code></div><button class="button" data-action="copy-digest" aria-label="Copy profile digest">Copy ${icon('copy')}</button></div>
+      <div class="dock-digest"><span>${icon('shield')}</span><div><strong>Evidence SHA-256</strong><code>${escapeHtml(state.bundle.profile_sha256 || '')}</code></div><button class="button" data-action="copy-digest" aria-label="Copy ${state.demoMode ? 'demo ' : ''}profile digest">Copy ${state.demoMode ? 'demo ' : ''}digest ${icon('copy')}</button></div>
       <div class="dock-handoff">
         <h2 id="handoff-dock-title">Ordered handoff</h2>
         <div class="dock-actions">
-          <button class="dock-action ready" data-action="export" data-kind="profile" ${state.busy ? 'disabled' : ''}><b>1</b>${icon('upload')}<span><strong>Export profile</strong><small>Validated reference profile</small></span></button>
+          <button class="dock-action ready" data-action="export" data-kind="profile" ${state.busy ? 'disabled' : ''}><b>1</b>${icon('upload')}<span><strong>${state.demoMode ? 'Download demo profile' : 'Export profile'}</strong><small>${state.demoMode ? 'Sanitized fixture' : 'Validated reference profile'}</small></span></button>
           <span aria-hidden="true">→</span>
-          <button class="dock-action" data-action="export" data-kind="plan" ${state.busy || !profileExported ? 'disabled' : ''}><b>2</b>${icon('lock')}<span><strong>Export plan</strong><small>${profileExported ? 'Profile digest matched' : 'Locked until profile export'}</small></span></button>
+          <button class="dock-action" data-action="export" data-kind="plan" ${state.busy || !profileExported ? 'disabled' : ''}><b>2</b>${icon('lock')}<span><strong>${state.demoMode ? 'Download demo plan' : 'Export plan'}</strong><small>${profileExported ? 'Profile digest matched' : 'Locked until profile export'}</small></span></button>
           <span aria-hidden="true">→</span>
-          <button class="dock-action" data-action="export" data-kind="dry-run" ${state.busy ? 'disabled' : ''}><b>3</b>${icon('terminal')}<span><strong>Export dry-run report</strong><small>Deterministic zero-call report</small></span></button>
+          <button class="dock-action" data-action="export" data-kind="dry-run" ${state.busy ? 'disabled' : ''}><b>3</b>${icon('terminal')}<span><strong>${state.demoMode ? 'Download demo dry-run' : 'Export dry-run report'}</strong><small>Deterministic zero-call report</small></span></button>
         </div>
       </div>
     </section>
@@ -235,9 +235,9 @@ export function renderReview(state) {
       <div><dt>${counts.groups}</dt><dd>group blueprints</dd></div><div><dt>${counts.policies}</dt><dd>policy intents</dd></div><div><dt>${kinds.policy_publication_prerequisite || 0}</dt><dd>publication prerequisites</dd></div><div><dt>${counts.assignments}</dt><dd>assignments</dd></div>
     </dl>
     <div class="export-list">
-      <div><span>${icon('institution')}</span><p><strong>University profile · step 1</strong><small>${escapeHtml(stem)}-profile.json · required companion for CLI plan validation</small></p><button class="button secondary" data-action="export" data-kind="profile" ${state.busy ? 'disabled' : ''}>${icon('download')} Export profile</button></div>
-      <div><span>${icon('assignment')}</span><p><strong>Offline intent plan · step 2</strong><small>${escapeHtml(stem)}-plan.json · digest-bound to the profile above; set mode 0600</small></p><button class="button secondary" data-action="export" data-kind="plan" ${state.busy || state.exportedProfileSha256 !== state.bundle.profile_sha256 ? 'disabled' : ''}>${icon('download')} ${state.exportedProfileSha256 === state.bundle.profile_sha256 ? 'Export matching plan' : 'Export profile first'}</button></div>
-      <div><span>${icon('readiness')}</span><p><strong>Dry-run report</strong><small>${escapeHtml(stem)}-dry-run.json · zero network and mutation calls</small></p><button class="button secondary" data-action="export" data-kind="dry-run" ${state.busy ? 'disabled' : ''}>${icon('download')} Export</button></div>
+      <div><span>${icon('institution')}</span><p><strong>University profile · step 1</strong><small>${escapeHtml(stem)}-profile.json · required companion for CLI plan validation</small></p><button class="button secondary" data-action="export" data-kind="profile" ${state.busy ? 'disabled' : ''}>${icon('download')} ${state.demoMode ? 'Download demo profile' : 'Export profile'}</button></div>
+      <div><span>${icon('assignment')}</span><p><strong>Offline intent plan · step 2</strong><small>${escapeHtml(stem)}-plan.json · digest-bound to the profile above; set mode 0600</small></p><button class="button secondary" data-action="export" data-kind="plan" ${state.busy || state.exportedProfileSha256 !== state.bundle.profile_sha256 ? 'disabled' : ''}>${icon('download')} ${state.exportedProfileSha256 === state.bundle.profile_sha256 ? state.demoMode ? 'Download demo plan' : 'Export matching plan' : state.demoMode ? 'Download demo profile first' : 'Export profile first'}</button></div>
+      <div><span>${icon('readiness')}</span><p><strong>Dry-run report</strong><small>${escapeHtml(stem)}-dry-run.json · zero network and mutation calls</small></p><button class="button secondary" data-action="export" data-kind="dry-run" ${state.busy ? 'disabled' : ''}>${icon('download')} ${state.demoMode ? 'Download demo report' : 'Export'}</button></div>
     </div>
     <p class="privacy-note">${icon('lock')} Downloads contain the reference design plus the institution name and namespace you entered. Do not enter secrets or target identifiers in those identity fields.</p>
   </section>`

@@ -8,6 +8,45 @@
   background: var(--canvas);
 }
 
+.app-shell.demo-mode {
+  grid-template-rows: var(--top-height) var(--demo-height) var(--journey-height) minmax(0, 1fr) var(--status-height);
+}
+
+.demo-boundary {
+  position: relative;
+  z-index: 29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 0 clamp(16px, 2.4vw, 28px);
+  border-bottom: 1px solid rgb(217 176 115);
+  background: rgb(255 247 232);
+  color: rgb(92 54 20);
+  font-size: 12px;
+}
+
+.demo-boundary strong {
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.demo-boundary span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.demo-boundary span::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .55;
+}
+
 /* - -  Seal masthead - -  */
 .top-bar {
   position: relative;

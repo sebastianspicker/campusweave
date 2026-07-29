@@ -1,9 +1,10 @@
-import { stepFromHash } from '../model.mjs'
+import { isDemoMode, stepFromHash } from '../model.mjs'
 
 /** Mutable application state for the CampusWeave browser workbench. */
 export function createState() {
   return {
     bundle: undefined,
+    demoMode: isDemoMode(),
     step: stepFromHash(window.location.hash),
     selected: {},
     filters: { policies: '', assignments: '' },

@@ -117,6 +117,12 @@ helper.
 
 ### Web interface
 
+Explore the
+[static CampusWeave demo](https://sebastianspicker.github.io/campusweave/).
+It uses the real browser interface with a sanitized Reference University
+fixture. The page labels command-capable controls as simulated and cannot
+connect to a Relution instance.
+
 Start the service:
 
 ```sh
