@@ -10,6 +10,7 @@ import {
   safeFilename,
   stepFromHash,
   CampusWeaveApiError,
+  isDemoMode,
 } from '../web/model.mjs'
 import { renderApp, selectedDefaults } from '../web/views.mjs'
 
@@ -89,6 +90,29 @@ test('documented screenshot routes fail closed to a known CampusWeave step', () 
   assert.equal(stepFromHash('review'), 'review')
   assert.equal(stepFromHash('#unknown'), 'start')
   assert.equal(stepFromHash(''), 'start')
+})
+
+test('the static demo is enabled only by the built runtime marker', () => {
+  const marker = (content) => ({
+    querySelector: () => ({ getAttribute: () => content }),
+  })
+
+  assert.equal(isDemoMode(marker('loopback')), false)
+  assert.equal(isDemoMode(marker('static-demo')), true)
+  assert.equal(isDemoMode(undefined), false)
+})
+
+test('the static demo marks command actions and disables profile import', () => {
+  const html = renderApp(campusWeaveState('institution', { demoMode: true }))
+  const review = renderApp(campusWeaveState('review', { demoMode: true }))
+
+  assert.match(html, /Static demo/)
+  assert.match(html, /Command actions are simulated/)
+  assert.match(html, /Simulate validation/)
+  assert.match(html, /Simulate save/)
+  assert.match(html, /Import unavailable[^<]*<\/span><\/button>/)
+  assert.match(review, /Download demo profile/)
+  assert.match(review, /Download demo report/)
 })
 
 test('mobile grid surfaces may shrink to the viewport', () => {

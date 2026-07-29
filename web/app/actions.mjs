@@ -17,6 +17,7 @@ import { renderApp, selectedDefaults } from '../views.mjs'
 export function createActions({ state, runtime, app }) {
   function render(options = {}) {
     app.setAttribute('aria-busy', String(state.busy || !state.bundle))
+    app.classList.toggle('demo-mode', state.demoMode)
     const rendered = new DOMParser().parseFromString(renderApp(state), 'text/html')
     app.replaceChildren(...rendered.body.childNodes)
     consumeSelectionAnnouncement()
@@ -149,7 +150,9 @@ export function createActions({ state, runtime, app }) {
       if (!isCurrentRequest(request)) return
       if (reset) clearStoredProfile()
       acceptBundle(bundle, { preserveSelection: false })
-      if (reset) showNotice('Reference University restored and validated locally.')
+      if (reset) showNotice(state.demoMode
+        ? 'Demo fixture restored. No validation command ran.'
+        : 'Reference University restored and validated locally.')
     } catch (error) {
       handleRequestError(request, error)
     }
@@ -170,7 +173,9 @@ export function createActions({ state, runtime, app }) {
       const bundle = await campusWeaveApi.compile(state.bundle.profile, request.signal)
       if (!isCurrentRequest(request)) return
       acceptBundle(bundle)
-      showNotice(message)
+      showNotice(state.demoMode
+        ? 'Simulated validation complete. The sanitized fixture was not changed.'
+        : message)
     } catch (error) {
       handleRequestError(request, error)
     }
@@ -309,7 +314,9 @@ export function createActions({ state, runtime, app }) {
       )
       if (!isCurrentRequest(request)) return
       acceptBundle(bundle, { preserveSelection: false })
-      showNotice('Institution namespace rebound and every reference revalidated.')
+      showNotice(state.demoMode
+        ? 'Simulated save complete. The sanitized fixture was not changed.'
+        : 'Institution namespace rebound and every reference revalidated.')
     } catch (error) {
       handleRequestError(request, error)
     }
@@ -353,6 +360,7 @@ export function createActions({ state, runtime, app }) {
   }
 
   function exportNotice(kind) {
+    if (state.demoMode) return 'Demo artifact downloaded from the sanitized fixture. No command or live operation ran.'
     if (kind === 'plan') return 'Matching plan exported. Keep it with the profile you just exported and set the plan to mode 0600.'
     if (kind === 'profile') return 'Profile exported. You may now export its exact digest-bound plan.'
     return 'Validated local artifact exported. No live operation was created.'

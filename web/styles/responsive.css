@@ -36,6 +36,21 @@
     grid-template-rows: var(--top-height) var(--journey-height) minmax(0, 1fr) var(--status-height);
   }
 
+  .app-shell.demo-mode {
+    grid-template-rows: var(--top-height) var(--demo-height) var(--journey-height) minmax(0, 1fr) var(--status-height);
+  }
+
+  .demo-boundary {
+    position: sticky;
+    top: var(--top-height);
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .demo-boundary span::before { margin-right: 8px; }
+
   .top-bar {
     position: sticky;
     top: 0;
@@ -81,6 +96,8 @@
     font-size: 13px;
   }
 
+  .demo-mode .top-actions .button.primary span::after { content: "Simulate"; }
+
   .journey-navigation {
     position: sticky;
     top: var(--top-height);
@@ -89,6 +106,10 @@
     padding: 0;
     overflow-x: auto;
     scroll-snap-type: x proximity;
+  }
+
+  .demo-mode .journey-navigation {
+    top: calc(var(--top-height) + var(--demo-height));
   }
 
   .journey-group {

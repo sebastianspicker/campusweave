@@ -29,6 +29,20 @@ The browser uses these local endpoints:
 Other paths and HTTP methods are rejected. Query strings are not accepted. The
 request body limit is 2 MiB.
 
+## Static demo boundary
+
+The public [GitHub Pages demo](https://sebastianspicker.github.io/campusweave/)
+uses the same HTML, CSS, JavaScript modules, routes, and checked-in Reference
+University profile as the loopback interface. `scripts/build_pages_demo.py`
+copies `web/`, compiles the sanitized reference response, and changes the
+runtime marker in the copied document. It does not maintain a second frontend.
+
+The static host cannot run the Python compiler. A persistent boundary rail
+identifies the fixture and simulation mode. Validation and institution save are
+no-op simulations that restore the unchanged fixture, import is unavailable,
+and browser-only downloads are labeled as demo artifacts. No Pages control
+sends data to CampusWeave or to a Relution instance.
+
 The frontend has no endpoint for tenant configuration, credentials, target
 inventory, operation bindings, approval, publication, or device actions.
 

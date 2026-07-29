@@ -1,5 +1,11 @@
 export const MAX_IMPORT_BYTES = 2 * 1024 * 1024
 
+export function isDemoMode(documentRoot = globalThis.document) {
+  return documentRoot
+    ?.querySelector('meta[name="campusweave-runtime"]')
+    ?.getAttribute('content') === 'static-demo'
+}
+
 export class CampusWeaveApiError extends Error {
   constructor(status, payload) {
     const code = payload?.code || payload?.error || 'request_failed'
@@ -47,12 +53,23 @@ async function request(path, options = {}) {
   return responseJson(response)
 }
 
+async function demoReference(signal) {
+  const response = await fetch(new URL('../demo-fixture.json', import.meta.url), {
+    cache: 'force-cache',
+    credentials: 'omit',
+    signal,
+  })
+  return responseJson(response)
+}
+
 export const campusWeaveApi = {
   reference(signal) {
+    if (isDemoMode()) return demoReference(signal)
     return request('reference', { signal })
   },
 
   compile(profile, signal) {
+    if (isDemoMode()) return demoReference(signal)
     return request('compile-profile', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -62,6 +79,7 @@ export const campusWeaveApi = {
   },
 
   importProfile(source, signal) {
+    if (isDemoMode()) return demoReference(signal)
     return request('import-profile', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -71,6 +89,7 @@ export const campusWeaveApi = {
   },
 
   instantiate(profile, institutionCode, institutionLabel, signal) {
+    if (isDemoMode()) return demoReference(signal)
     return request('instantiate-profile', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
