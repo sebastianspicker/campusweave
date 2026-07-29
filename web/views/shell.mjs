@@ -38,7 +38,7 @@ export function journeyNavigation(state, backgroundInert = '') {
   }).join('')}</nav>`
 }
 
-export function navigation(state) {
+export function htmlNavigation(state) {
   const closedCompact = state.compact && !state.navigationOpen
   return `<nav id="workflow-navigation" class="step-rail ${state.navigationOpen ? 'open' : ''}" aria-label="CampusWeave workflow" ${closedCompact ? 'inert aria-hidden="true"' : ''}><div class="mobile-nav-title"><strong>Workflow steps</strong><button id="workflow-close" class="icon-button" data-action="toggle-navigation" aria-label="Close workflow navigation">${icon('close')}</button></div>${STEPS.map(([id, label, iconName], index) => `<button data-action="navigate" data-step="${id}" class="step-button ${state.step === id ? 'active' : ''}" ${state.step === id ? 'aria-current="step"' : ''}><small aria-hidden="true">${String(index + 1).padStart(2, '0')}</small><span class="step-icon">${icon(iconName)}</span><span>${label}</span></button>`).join('')}<button class="menu-import" data-action="import" ${state.demoMode || state.busy ? 'disabled' : ''}>${icon('upload')}<span>${state.demoMode ? 'Import unavailable in demo' : 'Import profile'}</span></button><div class="rail-save">${icon('check')}<span>${state.demoMode ? 'Sanitized demo fixture' : state.storageState === 'saved' ? 'Saved in this browser' : state.storageState === 'saving' ? 'Saving locally…' : 'Local draft'}</span></div></nav>${state.compact && state.navigationOpen ? '<button class="nav-backdrop" data-action="close-navigation" aria-label="Close workflow navigation" tabindex="-1"></button>' : ''}`
 }

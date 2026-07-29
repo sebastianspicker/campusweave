@@ -3,7 +3,7 @@ import {
   confirmationDialog,
   demoBoundary,
   journeyNavigation,
-  navigation,
+  htmlNavigation,
   notification,
   statusRail,
   topBar,
@@ -20,7 +20,7 @@ export function renderApp(state) {
     : ''
   const masterDetail = ['organization', 'groups', 'policies', 'assignments'].includes(state.step)
   const workspaceClass = `workspace ${hasInspector ? 'with-inspector' : 'without-inspector'}${masterDetail ? ' selection-master-detail' : ''}`
-  return `${topBar(state)}${demoBoundary(state, backgroundInert)}${journeyNavigation(state, backgroundInert)}<div class="${workspaceClass}">${navigation(state)}<main class="canvas" id="main-content" tabindex="-1" ${backgroundInert}>${renderMain(state)}</main>${inspector}</div>${statusRail(state)}<p class="sr-only" role="status" aria-live="polite" data-selection-announcement>${escapeHtml(state.selectionAnnouncement || '')}</p>${notification(state)}${confirmationDialog(state)}`
+  return `${topBar(state)}${demoBoundary(state, backgroundInert)}${journeyNavigation(state, backgroundInert)}<div class="${workspaceClass}">${htmlNavigation(state)}<main class="canvas" id="main-content" tabindex="-1" ${backgroundInert}>${renderMain(state)}</main>${inspector}</div>${statusRail(state)}<p class="sr-only" role="status" aria-live="polite" data-selection-announcement>${escapeHtml(state.selectionAnnouncement || '')}</p>${notification(state)}${confirmationDialog(state)}`
 }
 
 export function selectedDefaults(profile) {
