@@ -1,5 +1,21 @@
 # Credentials and target-local configuration
 token
+
+# Local agent, analysis, and task state
+/.agents/
+/.claude/
+/.codex/
+/.cursor/
+/.mcp.json
+/.repowise/
+/.serena/
+/.codegraph/
+/AUDIT_LEDGER.md
+/logs/
+/*.log
+/wip/
+/WIP/
+/work-in-progress/
 .env
 .env.*
 !.env.example
