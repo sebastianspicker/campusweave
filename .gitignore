@@ -49,6 +49,7 @@ docs/relution/observations/
 /*.audit.json
 
 # Tool and editor state
+/docs/agent/
 /.serena/
 /.claude/
 /.continue/
