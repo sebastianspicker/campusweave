@@ -6,7 +6,7 @@ Status: unpublished local source candidate.
 
 ## Verified locally
 
-- 101 Python tests pass.
+- 106 Python tests pass.
 - 19 Node.js frontend tests pass.
 - Every browser JavaScript module passes `node --check`.
 - Both standalone Python documentation tools compile.
@@ -38,9 +38,8 @@ These results cover the local source candidate only.
 ## Publication blockers
 
 - No public license has been selected.
-- The repository has no commits.
-- No Git remote is configured.
-- GitHub Actions has not run for a candidate commit.
+- The current source candidate has not been committed or tagged.
+- GitHub Actions has not been verified for the exact candidate commit.
 - No tag or release exists.
 - Browser accessibility checks remain incomplete.
 

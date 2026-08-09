@@ -1,14 +1,15 @@
 # Releasing
 
-CampusWeave currently has no publishable release. The repository has no
-commits, remote, public license, package metadata, or verified remote CI result.
+CampusWeave currently has no publishable release. Repository history and an
+`origin` remote exist, but the source candidate has no public license, tag,
+published distribution, or verified remote CI result.
 
 ## Candidate preparation
 
 Before publication:
 
 1. Add an approved public license and any required third-party attribution.
-2. Establish the repository history and intended GitHub remote.
+2. Verify the established repository history and intended GitHub remote.
 3. Confirm the version in `RELEASE_STATUS.md` and
    `docs/releases/0.1.0-alpha.1.md`.
 4. Run the complete local gate in `CONTRIBUTING.md`.

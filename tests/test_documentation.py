@@ -28,6 +28,11 @@ LOCAL_PARTS = {
     "screenshots",
     "test-results",
 }
+LOCAL_FILE_NAMES = {
+    "AGENTS.md",
+    "AUDIT_LEDGER.md",
+    "REMEDIATION_LEDGER.md",
+}
 
 
 def public_files(pattern: str):
@@ -41,6 +46,7 @@ def public_files(pattern: str):
         if (
             path.is_file()
             and not hidden_local_path
+            and path.name not in LOCAL_FILE_NAMES
             and not path.name.endswith(".local.md")
             and not LOCAL_PARTS.intersection(relative.parts)
         ):

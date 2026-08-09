@@ -145,7 +145,7 @@ test('an initial reference failure presents a specific retry action', () => {
   assert.match(failed, /Reference profile unavailable/)
   assert.match(failed, /data-action="retry-reference"[^>]*>Retry loading reference profile<\/button>/)
   assert.match(failed, /class="loading-state" aria-live="polite"/)
-  assert.match(appSource, /else if \(action === 'retry-reference'\) void loadReference\(\)/)
+  assert.match(appSource, /\['retry-reference', \(\) => void loadReference\(\)\]/)
 })
 
 test('selection announcements are consumed after their live update', () => {
@@ -156,7 +156,8 @@ test('selection announcements are consumed after their live update', () => {
 
   assert.match(html, /role="status" aria-live="polite" data-selection-announcement>Example policy selected\. Details updated\.<\/p>/)
   assert.match(appSource, /function consumeSelectionAnnouncement\(\) \{[\s\S]*?state\.selectionAnnouncement = ''[\s\S]*?window\.requestAnimationFrame\(\(\) => announcement\?\.replaceChildren\(\)\)/)
-  assert.match(appSource, /app\.innerHTML = renderApp\(state\)\s*\n\s*consumeSelectionAnnouncement\(\)/)
+  assert.match(appSource, /new DOMParser\(\)\.parseFromString\(renderApp\(state\), 'text\/html'\)\s*\n\s*app\.replaceChildren\(\.\.\.rendered\.body\.childNodes\)\s*\n\s*consumeSelectionAnnouncement\(\)/)
+  assert.doesNotMatch(appSource, /\.innerHTML\s*=/)
 })
 
 test('the status footer distinguishes inert group blueprints from live groups', () => {

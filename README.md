@@ -8,9 +8,10 @@ registries, and tests.
 CampusWeave does not connect to a Relution instance or apply changes. A valid
 profile or plan proves local consistency only.
 
-Status: `0.1.0-alpha.1` is an unpublished source candidate. The repository has no
-package release, container image, installer, public license, or configured
-remote.
+Status: `0.1.0-alpha.1` is an unpublished source candidate. The repository has a
+configured `origin` remote at `https://github.com/sebastianspicker/campusweave.git`;
+this alone does not establish a published package release, container image,
+installer, or public license.
 
 ## Project purpose and scope
 
@@ -273,7 +274,7 @@ does not support a configurable host, port, reverse proxy, service manager, or
 multi-user deployment.
 
 The release procedure publishes source only and is currently blocked by the
-missing license, absent Git history, absent remote, and unverified remote CI.
+missing license, uncommitted candidate, and unverified remote CI.
 See [`RELEASING.md`](RELEASING.md).
 
 ## Troubleshooting
