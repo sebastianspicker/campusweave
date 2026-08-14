@@ -73,3 +73,62 @@ node_modules/
 /dist/
 /playwright-report/
 /test-results/
+
+# Shared local indexes and operator records
+.repowise/
+/.kilo/
+/AGENTS.md
+/CLAUDE.md
+/GEMINI.md
+/AUDIT_LEDGER.md
+/progress.md
+
+# Public environment templates
+!.env.*.example
+!.env.sample
+!.env.template
+
+# Local-only credentials
+secrets.local.*
+credentials.local.*
+*.local.pem
+*.local.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+.netrc
+.npmrc.local
+
+# Python caches and test reports
+.hypothesis/
+.tox/
+.nox/
+coverage.xml
+blob-report/
+junit*.xml
+*.sarif
+
+# Shared build output
+target/
+.build/
+DerivedData/
+xcuserdata/
+
+# Local database sidecars
+*.local.db
+*.local.sqlite
+*.local.sqlite3
+*.db-shm
+*.db-wal
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Codacy local generated state
+.codacy/tools-configs/
+.codacy/cli-config.yaml
+
+# Keep the CodeGraph sentinel itself local as well as its generated contents.
+.codegraph/

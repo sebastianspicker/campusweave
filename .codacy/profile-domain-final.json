@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "startedAt": "2026-07-28T06:10:13.402Z",
+    "completedAt": "2026-07-28T06:10:23.624Z",
+    "durationMs": 10222,
+    "repositoryRoot": "/Users/sebastian/Git/campusweave",
+    "executionMode": "standard",
+    "phaseTimings": {
+      "availabilityMs": 3884,
+      "fileDiscoveryMs": 29,
+      "fileRoutingMs": 5,
+      "toolExecutionMs": 6245,
+      "installMs": 0
+    }
+  },
+  "capability": {
+    "ready": [
+      {
+        "toolId": "Stylelint",
+        "displayName": "Stylelint",
+        "version": "16.26.1",
+        "installation": "bundled",
+        "runner": "local",
+        "filesRouted": 0,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "PMD",
+        "displayName": "PMD",
+        "version": "6.55.0",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 0,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "PyLintPython3",
+        "displayName": "Pylint",
+        "version": "3.3.9",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 6,
+        "configSource": "local",
+        "configPath": "/Users/sebastian/Git/campusweave/pyproject.toml"
+      },
+      {
+        "toolId": "Checkov",
+        "displayName": "Checkov",
+        "version": "3.3.0",
+        "installation": "global",
+        "runner": "local",
+        "filesRouted": 0,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "Lizard",
+        "displayName": "Lizard",
+        "version": "1.21.2",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 6,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "jackson",
+        "displayName": "Jackson Linter",
+        "version": "1.0.0",
+        "installation": "bundled",
+        "runner": "local",
+        "filesRouted": 0,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "Agentlinter",
+        "displayName": "Agentlinter",
+        "version": "0.3.3",
+        "installation": "bundled",
+        "runner": "local",
+        "filesRouted": 0,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "markdownlint",
+        "displayName": "markdownlint",
+        "version": "0.37.4",
+        "installation": "bundled",
+        "runner": "local",
+        "filesRouted": 0,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "Trivy",
+        "displayName": "Trivy",
+        "version": "0.72.0",
+        "installation": "global",
+        "runner": "local",
+        "filesRouted": 6,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "ESLint8",
+        "displayName": "ESLint 8",
+        "version": "8.57.1",
+        "installation": "bundled",
+        "runner": "local",
+        "filesRouted": 0,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "Prospector",
+        "displayName": "Prospector",
+        "version": "1.18.0",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 6,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "Bandit",
+        "displayName": "Bandit",
+        "version": "1.8.3",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 6,
+        "configSource": "local",
+        "configPath": "/Users/sebastian/Git/campusweave/pyproject.toml"
+      },
+      {
+        "toolId": "Semgrep",
+        "displayName": "Opengrep",
+        "version": "1.25.0",
+        "installation": "global",
+        "runner": "local",
+        "filesRouted": 6,
+        "configSource": "codacy"
+      }
+    ],
+    "unavailable": [],
+    "checkedAt": "2026-07-28T06:10:17.344Z"
+  },
+  "issues": [
+    {
+      "filePath": "scripts/university_profile_validation_groups.py",
+      "patternId": "Lizard_ccn-medium",
+      "toolId": "Lizard",
+      "line": 87,
+      "column": 1,
+      "endLine": 103,
+      "message": "validate_group_membership has a cyclomatic complexity of 10 (threshold: 8)",
+      "lineContent": "",
+      "category": "Complexity",
+      "severity": "Warning"
+    },
+    {
+      "filePath": "scripts/university_profile_validation_groups.py",
+      "patternId": "Lizard_ccn-medium",
+      "toolId": "Lizard",
+      "line": 157,
+      "column": 1,
+      "endLine": 169,
+      "message": "validate_promotion_ring has a cyclomatic complexity of 9 (threshold: 8)",
+      "lineContent": "",
+      "category": "Complexity",
+      "severity": "Warning"
+    },
+    {
+      "filePath": "scripts/university_profile_validation_organization.py",
+      "patternId": "Lizard_ccn-medium",
+      "toolId": "Lizard",
+      "line": 122,
+      "column": 1,
+      "endLine": 136,
+      "message": "validate_cohort_membership has a cyclomatic complexity of 9 (threshold: 8)",
+      "lineContent": "",
+      "category": "Complexity",
+      "severity": "Warning"
+    }
+  ],
+  "errors": [],
+  "toolResults": [
+    {
+      "toolId": "PyLintPython3",
+      "status": "success",
+      "issueCount": 0,
+      "errorCount": 0,
+      "durationMs": 918,
+      "filesAnalyzed": 6
+    },
+    {
+      "toolId": "Lizard",
+      "status": "success",
+      "issueCount": 3,
+      "errorCount": 0,
+      "durationMs": 54,
+      "filesAnalyzed": 6
+    },
+    {
+      "toolId": "Trivy",
+      "status": "success",
+      "issueCount": 0,
+      "errorCount": 0,
+      "durationMs": 462,
+      "filesAnalyzed": 6
+    },
+    {
+      "toolId": "Prospector",
+      "status": "success",
+      "issueCount": 0,
+      "errorCount": 0,
+      "durationMs": 340,
+      "filesAnalyzed": 6
+    },
+    {
+      "toolId": "Bandit",
+      "status": "success",
+      "issueCount": 0,
+      "errorCount": 0,
+      "durationMs": 539,
+      "filesAnalyzed": 6
+    },
+    {
+      "toolId": "Semgrep",
+      "status": "success",
+      "issueCount": 0,
+      "errorCount": 0,
+      "durationMs": 5325,
+      "filesAnalyzed": 6
+    }
+  ],
+  "patternSummary": {
+    "groups": [
+      {
+        "severity": "Warning",
+        "severityLabel": "WARNING",
+        "category": "Complexity",
+        "categoryLabel": "Complexity",
+        "patterns": [
+          {
+            "patternId": "Lizard_ccn-medium",
+            "title": "Enforce Medium Cyclomatic Complexity Threshold",
+            "toolId": "Lizard",
+            "toolDisplayName": "Lizard",
+            "category": "Complexity",
+            "severity": "Warning",
+            "issueCount": 3,
+            "fileCount": 2,
+            "noisy": false
+          }
+        ],
+        "totalIssues": 3,
+        "totalPatterns": 1
+      }
+    ],
+    "totalIssues": 3,
+    "totalPatterns": 1,
+    "noisyPatternCount": 0,
+    "noisyThreshold": 500
+  }
+}

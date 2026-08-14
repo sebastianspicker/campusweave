@@ -18,16 +18,31 @@ ALLOWED_URL = f"{SERVER}/api/test"
 
 
 class RelutionCurlHelperTests(unittest.TestCase):
-    def run_helper(self, *arguments: str, path: str | None = None) -> subprocess.CompletedProcess[str]:
+    def run_helper(
+        self,
+        *arguments: str,
+        path: str | None = None,
+        prefix: str = "",
+        token_exported: bool = False,
+        token: str = DUMMY_TOKEN,
+    ) -> subprocess.CompletedProcess[str]:
         environment = os.environ.copy()
         if path is not None:
             environment["PATH"] = f"{path}{os.pathsep}{environment['PATH']}"
+        token_setup = (
+            f"RELUTION_API_TOKEN={shlex.quote(token)}; export RELUTION_API_TOKEN; "
+            if token_exported
+            else (
+                "typeset -g +x RELUTION_API_TOKEN; "
+                f"RELUTION_API_TOKEN={shlex.quote(token)}; "
+            )
+        )
         shell_program = (
-            f"source {shlex.quote(str(HELPER))}; "
-            "typeset -g +x RELUTION_API_TOKEN; "
-            f"RELUTION_API_TOKEN={shlex.quote(DUMMY_TOKEN)}; "
-            f"RELUTION_API_SERVER={shlex.quote(SERVER)}; "
-            "relution_curl "
+            prefix
+            + f"source {shlex.quote(str(HELPER))}; "
+            + token_setup
+            + f"RELUTION_API_SERVER={shlex.quote(SERVER)}; "
+            + "relution_curl "
             + " ".join(shlex.quote(argument) for argument in arguments)
         )
         return subprocess.run(
@@ -47,6 +62,17 @@ class RelutionCurlHelperTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_execution_defines_no_program_behavior(self) -> None:
+        result = subprocess.run(
+            ["zsh", str(HELPER)],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout, "")
+        self.assertEqual(result.stderr, "")
+
     def test_allowed_get_uses_pinned_pipe_authentication(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             temporary_path = Path(temporary_directory)
@@ -63,7 +89,11 @@ class RelutionCurlHelperTests(unittest.TestCase):
                     assert stat.S_ISFIFO(os.fstat(0).st_mode), "curl stdin is not a pipe"
                     assert sys.stdin.read() == f'header = "X-User-Access-Token: {{token}}"\\n'
                     assert sys.argv[1:8] == ["--disable", "--config", "-", "--globoff", "--noproxy", "*", "--fail-with-body"]
-                    assert sys.argv[8:] == ["--silent", "--show-error", "--connect-timeout", "10", "--max-time", "60", "--request", "GET", "--header", "Accept: application/json", {ALLOWED_URL!r}]
+                    assert sys.argv[8:] == [
+                        "--silent", "--show-error", "--connect-timeout", "10",
+                        "--max-time", "60", "--request", "GET", "--header",
+                        "Accept: application/json", {ALLOWED_URL!r},
+                    ]
                     assert all(token not in argument for argument in sys.argv)
                     assert all(token not in value for value in os.environ.values())
                     print("pipe-auth-ok")
@@ -91,6 +121,107 @@ class RelutionCurlHelperTests(unittest.TestCase):
 
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(result.stdout.strip(), "pipe-auth-ok")
+
+    def test_builtin_print_bypasses_hostile_alias_and_function(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            fake_curl = temporary_path / "curl"
+            fake_curl.write_text(
+                textwrap.dedent(
+                    f"""\
+                    #!{sys.executable}
+                    import sys
+
+                    token = {DUMMY_TOKEN!r}
+                    assert sys.stdin.read() == f'header = "X-User-Access-Token: {{token}}"\\n'
+                    print("pipe-auth-ok")
+                    """
+                ),
+                encoding="utf-8",
+            )
+            fake_curl.chmod(0o755)
+
+            for prefix in (
+                "alias print='print -u2 alias-intercepted'; ",
+                "function print() { builtin print -r -- function-intercepted >&2; }; ",
+            ):
+                with self.subTest(prefix=prefix):
+                    result = self.run_helper(
+                        ALLOWED_URL,
+                        path=str(temporary_path),
+                        prefix=prefix,
+                    )
+
+                    self.assertEqual(result.returncode, 0, result.stderr)
+                    self.assertEqual(result.stdout.strip(), "pipe-auth-ok")
+                    self.assertNotIn("intercepted", result.stderr)
+
+    def test_config_escapes_token_backslashes_and_quotes(self) -> None:
+        token = 'token\\with"quote'
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            fake_curl = temporary_path / "curl"
+            fake_curl.write_text(
+                textwrap.dedent(
+                    f"""\
+                    #!{sys.executable}
+                    import os
+                    import sys
+
+                    token = {token!r}
+                    escaped = token.replace("\\\\", "\\\\\\\\").replace('"', '\\\\"')
+                    assert sys.stdin.read() == f'header = "X-User-Access-Token: {{escaped}}"\\n'
+                    assert all(token not in argument for argument in sys.argv)
+                    assert all(token not in value for value in os.environ.values())
+                    print("escaped-pipe-auth-ok")
+                    """
+                ),
+                encoding="utf-8",
+            )
+            fake_curl.chmod(0o755)
+
+            result = self.run_helper(
+                ALLOWED_URL,
+                path=str(temporary_path),
+                token=token,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(result.stdout.strip(), "escaped-pipe-auth-ok")
+
+    def test_exported_token_is_rejected_before_curl_invocation(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            fake_curl = temporary_path / "curl"
+            fake_curl.write_text(
+                f"#!{sys.executable}\nimport sys\nsys.exit(77)\n",
+                encoding="utf-8",
+            )
+            fake_curl.chmod(0o755)
+
+            result = self.run_helper(
+                ALLOWED_URL,
+                path=str(temporary_path),
+                token_exported=True,
+            )
+
+            self.assertEqual(result.returncode, 2)
+            self.assertIn("unexported shell variable", result.stderr)
+            self.assertNotIn(DUMMY_TOKEN, result.stderr)
+
+    def test_curl_exit_status_propagates(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            fake_curl = temporary_path / "curl"
+            fake_curl.write_text(
+                f"#!{sys.executable}\nimport sys\nsys.exit(37)\n",
+                encoding="utf-8",
+            )
+            fake_curl.chmod(0o755)
+
+            result = self.run_helper(ALLOWED_URL, path=str(temporary_path))
+
+            self.assertEqual(result.returncode, 37)
 
     def test_allowed_patch_with_runbook_evidence_outputs(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:

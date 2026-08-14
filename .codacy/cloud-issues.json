@@ -1,0 +1,3118 @@
+{
+  "issues": [
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_resolved_plan_operations_must_match_target_binding_roles has 60 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1354,
+      "lineText": "    def test_resolved_plan_operations_must_match_target_binding_roles(self) -> None:",
+      "resultDataId": 131520772936,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method binding_role_index has a cyclomatic complexity of 11 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1723,
+      "lineText": "def binding_role_index(",
+      "resultDataId": 131520772875,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method atomic_write_json has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "scripts/university_runtime/io.py",
+      "lineNumber": 168,
+      "lineText": "def atomic_write_json(path: Path, value: Any, *, mode: int = 0o600) -> None:",
+      "resultDataId": 131520772889,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method security_summary has a cyclomatic complexity of 13 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 494,
+      "lineText": "def security_summary(security: Any) -> str:",
+      "resultDataId": 131520772902,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_catalog has 77 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1012,
+      "lineText": "def validate_catalog(",
+      "resultDataId": 131520772874,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method schema_catalog_summary has a cyclomatic complexity of 39 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 934,
+      "lineText": "def schema_catalog_summary(schema: Any, *, context: str) -> dict[str, Any] | None:",
+      "resultDataId": 131520772960,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_approved_plan_rejects_invalid_authorization_and_target_scope has 57 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1039,
+      "lineText": "    def test_approved_plan_rejects_invalid_authorization_and_target_scope(self) -> None:",
+      "resultDataId": 131520772870,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_target_context has a cyclomatic complexity of 100 (limit is 8)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 461,
+      "lineText": "def validate_target_context(",
+      "resultDataId": 131520772926,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File scripts/validate_machine_docs.py has 2934 non-comment lines of code",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1,
+      "lineText": "#!/usr/bin/env python3",
+      "resultDataId": 131520772910,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_all has 114 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 2944,
+      "lineText": "def validate_all(args: argparse.Namespace) -> list[str]:",
+      "resultDataId": 131520772956,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method operation_servers has a cyclomatic complexity of 17 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 874,
+      "lineText": "def operation_servers(operation: Operation, spec: Mapping[str, Any]) -> str:",
+      "resultDataId": 131520772890,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_concept_registry has 229 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 752,
+      "lineText": "def validate_concept_registry(",
+      "resultDataId": 131520772918,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_responses has 64 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1273,
+      "lineText": "def catalog_responses(",
+      "resultDataId": 131520772951,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_all has a cyclomatic complexity of 34 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 2944,
+      "lineText": "def validate_all(args: argparse.Namespace) -> list[str]:",
+      "resultDataId": 131520772931,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method approved_change_plan_for has 134 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 214,
+      "lineText": "    def approved_change_plan_for(self, catalog: dict[str, Any]) -> dict[str, Any]:",
+      "resultDataId": 131520772962,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_security has a cyclomatic complexity of 11 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1342,
+      "lineText": "def catalog_security(security: Any, *, context: str) -> dict[str, Any]:",
+      "resultDataId": 131520772877,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File tests/test_university_runtime.py has 690 non-comment lines of code",
+      "filePath": "tests/test_university_runtime.py",
+      "lineNumber": 1,
+      "lineText": "from __future__ import annotations",
+      "resultDataId": 131520772894,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method collect_operations.collect_path_item has a cyclomatic complexity of 14 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 298,
+      "lineText": "    def collect_path_item(",
+      "resultDataId": 131520772907,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_catalog has a cyclomatic complexity of 31 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1012,
+      "lineText": "def validate_catalog(",
+      "resultDataId": 131520772859,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_profile_binding_coverage has 82 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 244,
+      "lineText": "def _validate_profile_binding_coverage(",
+      "resultDataId": 131520772856,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_openapi_32_enumerates_query_additional_methods_and_callbacks has 119 lines of code (limit is 50)",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 392,
+      "lineText": "    def test_openapi_32_enumerates_query_additional_methods_and_callbacks(self) -> None:",
+      "resultDataId": 131520772940,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method pointer_exists has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 507,
+      "lineText": "def pointer_exists(document: Any, fragment: str) -> bool:",
+      "resultDataId": 131520772919,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_change_plan_target_bindings has 80 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1800,
+      "lineText": "def _validate_change_plan_target_bindings(",
+      "resultDataId": 131520772909,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_audit_plan_and_rollback_controls_fail_closed has 64 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 660,
+      "lineText": "    def test_audit_plan_and_rollback_controls_fail_closed(self) -> None:",
+      "resultDataId": 131520772958,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_change_plan_rejects_read_and_write_role_misuse has 51 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1236,
+      "lineText": "    def test_change_plan_rejects_read_and_write_role_misuse(self) -> None:",
+      "resultDataId": 131520772882,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method operations_from_path_item has 79 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 207,
+      "lineText": "def operations_from_path_item(",
+      "resultDataId": 131520772952,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_request_body has a cyclomatic complexity of 18 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1171,
+      "lineText": "def catalog_request_body(",
+      "resultDataId": 131520772903,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _post has a cyclomatic complexity of 17 (limit is 8)",
+      "filePath": "campusweave/service.py",
+      "lineNumber": 462,
+      "lineText": "    def _post(self, path: str) -> None:",
+      "resultDataId": 131520772955,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_schema_references has 54 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 526,
+      "lineText": "def validate_schema_references(schema_directory: Path, errors: list[str]) -> None:",
+      "resultDataId": 131520772865,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_package has a cyclomatic complexity of 308 (limit is 8)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 710,
+      "lineText": "def validate_package(document: Any, concept_ids: set[str]) -> list[str]:",
+      "resultDataId": 131520772914,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_operation_reference has a cyclomatic complexity of 15 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1270,
+      "lineText": "def validate_operation_reference(",
+      "resultDataId": 131520772922,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method read_json_snapshot has a cyclomatic complexity of 12 (limit is 8)",
+      "filePath": "scripts/strict_json.py",
+      "lineNumber": 33,
+      "lineText": "def read_json_snapshot(path: Path, *, max_bytes: int = MAX_JSON_BYTES) -> bytes:",
+      "resultDataId": 131520772945,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _safe_validation_details has a cyclomatic complexity of 11 (limit is 8)",
+      "filePath": "campusweave/service.py",
+      "lineNumber": 95,
+      "lineText": "def _safe_validation_details(errors: list[str]) -> list[dict[str, str]]:",
+      "resultDataId": 131520772888,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method render_responses has a cyclomatic complexity of 13 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 704,
+      "lineText": "def render_responses(",
+      "resultDataId": 131520772927,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method concept_ids_from_manifest has 62 lines of code (limit is 50)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 646,
+      "lineText": "def concept_ids_from_manifest(manifest_path: Path, errors: list[str]) -> set[str]:",
+      "resultDataId": 131520772934,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method render_request_body has a cyclomatic complexity of 24 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 584,
+      "lineText": "def render_request_body(",
+      "resultDataId": 131520772953,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method operation_servers has 55 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 874,
+      "lineText": "def operation_servers(operation: Operation, spec: Mapping[str, Any]) -> str:",
+      "resultDataId": 131520772898,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _relative_path has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 115,
+      "lineText": "def _relative_path(value: Any, location: str, errors: list[str]) -> str | None:",
+      "resultDataId": 131520772864,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _evidence_bound_target_fixture has 213 lines of code (limit is 50)",
+      "filePath": "tests/test_university_runtime.py",
+      "lineNumber": 63,
+      "lineText": "    def _evidence_bound_target_fixture(",
+      "resultDataId": 131520772861,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method render_catalog has a cyclomatic complexity of 28 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1740,
+      "lineText": "def render_catalog(spec: Mapping[str, Any], raw: bytes, source_name: str) -> str:",
+      "resultDataId": 131520772850,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method build_execution_plan has 93 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 267,
+      "lineText": "def build_execution_plan(profile: Mapping[str, Any], profile_sha256: str) -> dict[str, Any]:",
+      "resultDataId": 131520772867,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_responses has a cyclomatic complexity of 20 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1273,
+      "lineText": "def catalog_responses(",
+      "resultDataId": 131520772886,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_parameter-count-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_operation_reference has 9 parameters (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1270,
+      "lineText": "def validate_operation_reference(",
+      "resultDataId": 131520772855,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_parameter has a cyclomatic complexity of 16 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1087,
+      "lineText": "def catalog_parameter(",
+      "resultDataId": 131520772879,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _profile_binding_requirements has a cyclomatic complexity of 21 (limit is 8)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 198,
+      "lineText": "def _profile_binding_requirements(",
+      "resultDataId": 131520772957,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_execution_plan has a cyclomatic complexity of 39 (limit is 8)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 403,
+      "lineText": "def validate_execution_plan(",
+      "resultDataId": 131520772862,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _evidence_bound_target_fixture has a cyclomatic complexity of 16 (limit is 8)",
+      "filePath": "tests/test_university_runtime.py",
+      "lineNumber": 63,
+      "lineText": "    def _evidence_bound_target_fixture(",
+      "resultDataId": 131520772896,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_acyclic has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 577,
+      "lineText": "def validate_acyclic(",
+      "resultDataId": 131520772911,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method build_machine_catalog has a cyclomatic complexity of 31 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1575,
+      "lineText": "def build_machine_catalog(",
+      "resultDataId": 131520772884,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_inventory has a cyclomatic complexity of 32 (limit is 8)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 331,
+      "lineText": "def _validate_inventory(",
+      "resultDataId": 131520772923,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method main has 65 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1972,
+      "lineText": "def main(argv: Iterable[str] | None = None) -> int:",
+      "resultDataId": 131520772853,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method manifest_registry_paths has a cyclomatic complexity of 31 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 2830,
+      "lineText": "def manifest_registry_paths(",
+      "resultDataId": 131520772876,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_invalid_inputs_are_safe_actionable_and_rebinding_only has 52 lines of code (limit is 50)",
+      "filePath": "tests/test_campusweave.py",
+      "lineNumber": 258,
+      "lineText": "    def test_invalid_inputs_are_safe_actionable_and_rebinding_only(self) -> None:",
+      "resultDataId": 131520772846,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_bindings has 379 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1341,
+      "lineText": "def validate_bindings(",
+      "resultDataId": 131520772920,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_security_schemes has 74 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1375,
+      "lineText": "def catalog_security_schemes(spec: Mapping[str, Any]) -> list[dict[str, Any]]:",
+      "resultDataId": 131520772912,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_request_body has 56 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1171,
+      "lineText": "def catalog_request_body(",
+      "resultDataId": 131520772948,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File tests/test_machine_docs.py has 1310 non-comment lines of code",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1,
+      "lineText": "from __future__ import annotations",
+      "resultDataId": 131520772844,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method render_request_body has 92 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 584,
+      "lineText": "def render_request_body(",
+      "resultDataId": 131520772932,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File scripts/university_runtime/plan.py has 509 non-comment lines of code",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 1,
+      "lineText": "\"\"\"Deterministic execution-intent compiler for university profiles.",
+      "resultDataId": 131520772852,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_operation_reference has 61 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1270,
+      "lineText": "def validate_operation_reference(",
+      "resultDataId": 131520772950,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method main has a cyclomatic complexity of 22 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1972,
+      "lineText": "def main(argv: Iterable[str] | None = None) -> int:",
+      "resultDataId": 131520772848,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method schema_catalog_summary has 115 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 934,
+      "lineText": "def schema_catalog_summary(schema: Any, *, context: str) -> dict[str, Any] | None:",
+      "resultDataId": 131520772881,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_package has 724 lines of code (limit is 50)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 710,
+      "lineText": "def validate_package(document: Any, concept_ids: set[str]) -> list[str]:",
+      "resultDataId": 131520772933,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _post has 63 lines of code (limit is 50)",
+      "filePath": "campusweave/service.py",
+      "lineNumber": 462,
+      "lineText": "    def _post(self, path: str) -> None:",
+      "resultDataId": 131520772915,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_dag has a cyclomatic complexity of 17 (limit is 8)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 364,
+      "lineText": "def _validate_dag(steps: Sequence[Mapping[str, Any]], errors: list[str]) -> None:",
+      "resultDataId": 131520772906,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_change_plan has a cyclomatic complexity of 234 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1978,
+      "lineText": "def validate_change_plan(",
+      "resultDataId": 131520772899,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method instantiate_profile has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 512,
+      "lineText": "def instantiate_profile(",
+      "resultDataId": 131520772939,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_https_url has a cyclomatic complexity of 14 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 668,
+      "lineText": "def validate_https_url(",
+      "resultDataId": 131520772943,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method load_spec has a cyclomatic complexity of 15 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 99,
+      "lineText": "def load_spec(path: Path) -> tuple[dict[str, Any], bytes]:",
+      "resultDataId": 131520772847,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method schema_summary has a cyclomatic complexity of 22 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 440,
+      "lineText": "def schema_summary(schema: Any) -> str:",
+      "resultDataId": 131520772930,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method parse_args has 57 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/cli.py",
+      "lineNumber": 254,
+      "lineText": "def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:",
+      "resultDataId": 131520772917,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_public_api_registry has a cyclomatic complexity of 38 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1097,
+      "lineText": "def validate_public_api_registry(",
+      "resultDataId": 131520772891,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File scripts/university_runtime/target.py has 749 non-comment lines of code",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 1,
+      "lineText": "\"\"\"Validation for private, digest-bound university target contexts.\"\"\"",
+      "resultDataId": 131520772941,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method operations_from_path_item has a cyclomatic complexity of 19 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 207,
+      "lineText": "def operations_from_path_item(",
+      "resultDataId": 131520772921,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_concept_registry has a cyclomatic complexity of 60 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 752,
+      "lineText": "def validate_concept_registry(",
+      "resultDataId": 131520772845,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method load_json_beneath has a cyclomatic complexity of 12 (limit is 8)",
+      "filePath": "scripts/university_runtime/io.py",
+      "lineNumber": 100,
+      "lineText": "def load_json_beneath(",
+      "resultDataId": 131520772880,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method resolved_binding_for has 53 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 146,
+      "lineText": "    def resolved_binding_for(",
+      "resultDataId": 131520772904,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_response_headers has a cyclomatic complexity of 13 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1233,
+      "lineText": "def catalog_response_headers(headers: Any, *, context: str) -> list[dict[str, Any]]:",
+      "resultDataId": 131520772892,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_target_context has 325 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 461,
+      "lineText": "def validate_target_context(",
+      "resultDataId": 131520772901,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_string_array has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 621,
+      "lineText": "def validate_string_array(",
+      "resultDataId": 131520772961,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method approved_change_plan_for has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 214,
+      "lineText": "    def approved_change_plan_for(self, catalog: dict[str, Any]) -> dict[str, Any]:",
+      "resultDataId": 131520772944,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_change_plan_operation_roles has 90 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1884,
+      "lineText": "def _validate_change_plan_operation_roles(",
+      "resultDataId": 131520772916,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_swagger_2_inherits_global_media_types has 79 lines of code (limit is 50)",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 554,
+      "lineText": "    def test_swagger_2_inherits_global_media_types(self) -> None:",
+      "resultDataId": 131520772887,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_security_schemes has a cyclomatic complexity of 26 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1375,
+      "lineText": "def catalog_security_schemes(spec: Mapping[str, Any]) -> list[dict[str, Any]]:",
+      "resultDataId": 131520772851,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method collect_operations.collect_path_item has 74 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 298,
+      "lineText": "    def collect_path_item(",
+      "resultDataId": 131520772905,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method request_body_media_types has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1253,
+      "lineText": "def request_body_media_types(value: Any) -> set[str]:",
+      "resultDataId": 131520772872,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_change_plan_target_bindings has a cyclomatic complexity of 18 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1800,
+      "lineText": "def _validate_change_plan_target_bindings(",
+      "resultDataId": 131520772883,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method manifest_registry_paths has 91 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 2830,
+      "lineText": "def manifest_registry_paths(",
+      "resultDataId": 131520772849,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method render_catalog has 164 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1740,
+      "lineText": "def render_catalog(spec: Mapping[str, Any], raw: bytes, source_name: str) -> str:",
+      "resultDataId": 131520772925,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method instantiate_profile.replace has a cyclomatic complexity of 11 (limit is 8)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 534,
+      "lineText": "    def replace(value: Any) -> Any:",
+      "resultDataId": 131520772873,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method load_json_beneath has 56 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/io.py",
+      "lineNumber": 100,
+      "lineText": "def load_json_beneath(",
+      "resultDataId": 131520772942,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method concept_ids_from_manifest has a cyclomatic complexity of 21 (limit is 8)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 646,
+      "lineText": "def concept_ids_from_manifest(manifest_path: Path, errors: list[str]) -> set[str]:",
+      "resultDataId": 131520772878,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _origin has a cyclomatic complexity of 23 (limit is 8)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 131,
+      "lineText": "def _origin(value: Any, location: str, errors: list[str]) -> str | None:",
+      "resultDataId": 131520772854,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method resolve_callback_object has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 174,
+      "lineText": "def resolve_callback_object(",
+      "resultDataId": 131520772947,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_parameter has 54 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1087,
+      "lineText": "def catalog_parameter(",
+      "resultDataId": 131520772895,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_execution_plan has 101 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 403,
+      "lineText": "def validate_execution_plan(",
+      "resultDataId": 131520772897,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_completed_request_forces_close_and_releases_admission_slot has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "tests/test_campusweave.py",
+      "lineNumber": 187,
+      "lineText": "    def test_completed_request_forces_close_and_releases_admission_slot(self) -> None:",
+      "resultDataId": 131520772949,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_contract_servers has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1477,
+      "lineText": "def catalog_contract_servers(spec: Mapping[str, Any]) -> list[dict[str, Any]]:",
+      "resultDataId": 131520772863,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method render_server has a cyclomatic complexity of 15 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 753,
+      "lineText": "def render_server(server: Mapping[str, Any], *, context: str) -> str:",
+      "resultDataId": 131520772885,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_inventory has 104 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 331,
+      "lineText": "def _validate_inventory(",
+      "resultDataId": 131520772963,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "render_request_body is too complex (20) (MC0001)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 584,
+      "lineText": "def render_request_body(",
+      "resultDataId": 131520772985,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method stepFromHash has 67 lines of code (limit is 50)",
+      "filePath": "web/model/selectors.mjs",
+      "lineNumber": 12,
+      "lineText": "export function stepFromHash(hash) {",
+      "resultDataId": 131520773124,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_pyflakes",
+        "severityLevel": "High",
+        "category": "ErrorProne"
+      },
+      "message": "'argparse' imported but unused (F401)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 3,
+      "lineText": "import argparse",
+      "resultDataId": 131520772992,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method (anonymous) has a cyclomatic complexity of 17 (limit is 8)",
+      "filePath": "web/app.js",
+      "lineNumber": 28,
+      "lineText": "app.addEventListener('click', (event) => {",
+      "resultDataId": 131520773122,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method string_list has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 509,
+      "lineText": "def string_list(value: Any, errors: list[str], location: str, *, nonempty: bool = False) -> list[str]:",
+      "resultDataId": 131520772946,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/base.css",
+      "lineNumber": 1,
+      "lineText": "* { box-sizing: border-box; }",
+      "resultDataId": 131520773226,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "main is too complex (17) (MC0001)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1972,
+      "lineText": "def main(argv: Iterable[str] | None = None) -> int:",
+      "resultDataId": 131520772991,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_public_api_registry is too complex (26) (MC0001)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1097,
+      "lineText": "def validate_public_api_registry(",
+      "resultDataId": 131520772987,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method contract_servers has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 795,
+      "lineText": "def contract_servers(spec: Mapping[str, Any]) -> list[str]:",
+      "resultDataId": 131520772860,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_pyflakes",
+        "severityLevel": "High",
+        "category": "ErrorProne"
+      },
+      "message": "local variable 'profile' is assigned to but never used (F841)",
+      "filePath": "tests/test_campusweave.py",
+      "lineNumber": 95,
+      "lineText": "            profile = json.dumps(self.reference[\"profile\"]).encode()",
+      "resultDataId": 131520773005,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method navigate has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "web/app/actions.mjs",
+      "lineNumber": 230,
+      "lineText": "  async function navigate(step, { confirmDiscard = true, updateHistory = 'push' } = {}) {",
+      "resultDataId": 131520773121,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B404",
+        "severityLevel": "Info",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "filePath": "scripts/university_runtime/cli.py",
+      "lineNumber": 7,
+      "lineText": "import subprocess",
+      "resultDataId": 131520773044,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method catalog_operation_servers has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1509,
+      "lineText": "def catalog_operation_servers(",
+      "resultDataId": 131520772858,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_catalog is too complex (23) (MC0001)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1012,
+      "lineText": "def validate_catalog(",
+      "resultDataId": 131520772986,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B607",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Starting a process with a partial executable path",
+      "filePath": "tests/test_relution_curl.py",
+      "lineNumber": 42,
+      "lineText": "        result = subprocess.run(",
+      "resultDataId": 131520773039,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "schema_catalog_summary is too complex (32) (MC0001)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 934,
+      "lineText": "def schema_catalog_summary(schema: Any, *, context: str) -> dict[str, Any] | None:",
+      "resultDataId": 131520773001,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method scan_commit_boundary has a cyclomatic complexity of 15 (limit is 8)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 618,
+      "lineText": "def scan_commit_boundary(",
+      "resultDataId": 131520772929,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B101",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "UnexpectedBehaviour"
+      },
+      "message": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 25,
+      "lineText": "assert spec is not None and spec.loader is not None",
+      "resultDataId": 131520773029,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_security_detect-object-injection",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureModulesLibraries"
+      },
+      "message": "Generic Object Injection Sink",
+      "filePath": "web/model/api.mjs",
+      "lineNumber": 12,
+      "lineText": "    super(payload?.message || messages[code] || `CampusWeave request failed (${status})`)",
+      "resultDataId": 131520774279,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/lists.css",
+      "lineNumber": 1,
+      "lineText": "/* Entity lists, assignment lists, toolbars, empty states */",
+      "resultDataId": 131520773230,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/tokens.css",
+      "lineNumber": 1,
+      "lineText": ":root {",
+      "resultDataId": 131520773232,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method build_machine_catalog has 143 lines of code (limit is 50)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1575,
+      "lineText": "def build_machine_catalog(",
+      "resultDataId": 131520772869,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'warning' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 60,
+      "lineText": "  warning: '<path d=\"M12 3 2.5 20h19z\"/><path d=\"M12 9v5m0 3h.01\"/>',",
+      "resultDataId": 131520774290,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'shield' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 50,
+      "lineText": "  shield: '<path d=\"M12 2 4.5 5v5.5c0 5 3.1 8.5 7.5 10.5 4.4-2 7.5-5.5 7.5-10.5V5z\"/><path d=\"m9 12 2 2 4-5\"/>',",
+      "resultDataId": 131520774282,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B607",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Starting a process with a partial executable path",
+      "filePath": "tests/test_relution_curl.py",
+      "lineNumber": 33,
+      "lineText": "        return subprocess.run(",
+      "resultDataId": 131520773028,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML function 'renderInspector' returns HTML content",
+      "filePath": "web/views/inspectors.mjs",
+      "lineNumber": 81,
+      "lineText": "  if (!state.bundle) return '<div class=\"inspector-empty\"><div class=\"loader small\"></div></div>'",
+      "resultDataId": 131520774287,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B404",
+        "severityLevel": "Info",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "filePath": "tests/test_university_runtime.py",
+      "lineNumber": 9,
+      "lineText": "import subprocess",
+      "resultDataId": 131520773030,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_rules_lgpl_javascript_ssrf_rule-node-ssrf",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "HTTP"
+      },
+      "message": "This application allows user-controlled URLs to be passed directly to HTTP client libraries.",
+      "filePath": "web/model/api.mjs",
+      "lineNumber": 42,
+      "lineText": "  const response = await fetch(`/api/v1/${path}`, {",
+      "resultDataId": 131520773026,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_profile_binding_coverage has a cyclomatic complexity of 32 (limit is 8)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 244,
+      "lineText": "def _validate_profile_binding_coverage(",
+      "resultDataId": 131520772893,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_execution_plan is too complex (30) (MC0001)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 403,
+      "lineText": "def validate_execution_plan(",
+      "resultDataId": 131520772989,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method (anonymous) has 96 lines of code (limit is 50)",
+      "filePath": "tests/test_campusweave_ui.mjs",
+      "lineNumber": 222,
+      "lineText": "test('draft replacement uses an accessible in-product confirmation dialog', () => {",
+      "resultDataId": 131520773119,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_concept_registry is too complex (45) (MC0001)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 752,
+      "lineText": "def validate_concept_registry(",
+      "resultDataId": 131520772993,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "tests/test_university_profile.py",
+      "lineNumber": 36,
+      "lineText": "        result = subprocess.run(",
+      "resultDataId": 131520773048,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_security_detect-object-injection",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureModulesLibraries"
+      },
+      "message": "Generic Object Injection Sink",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 75,
+      "lineText": "  return `<svg class=\"icon ${escapeHtml(className)}\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\">${paths[name] || paths.review}</svg>`",
+      "resultDataId": 131520774307,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_security_detect-object-injection",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureModulesLibraries"
+      },
+      "message": "Generic Object Injection Sink",
+      "filePath": "web/app.js",
+      "lineNumber": 51,
+      "lineText": "    state.filters[filter] = ''",
+      "resultDataId": 131520774283,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'lock' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 63,
+      "lineText": "  lock: '<rect x=\"4\" y=\"10\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 0 1 8 0v3\"/>',",
+      "resultDataId": 131520774294,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_javascript.browser.security.insecure-innerhtml.insecure-innerhtml",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "User controlled data in a `app.innerHTML` is an anti-pattern that can lead to XSS vulnerabilities",
+      "filePath": "web/app/actions.mjs",
+      "lineNumber": 20,
+      "lineText": "    app.innerHTML = renderApp(state)",
+      "resultDataId": 131520773025,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B101",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "UnexpectedBehaviour"
+      },
+      "message": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 2031,
+      "lineText": "            assert machine_catalog is not None",
+      "resultDataId": 131520773049,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/components.css",
+      "lineNumber": 1,
+      "lineText": "/* Shared controls: buttons, toast, confirmation, search, status, badges */",
+      "resultDataId": 131520773231,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File scripts/render_relution_openapi.py has 1795 non-comment lines of code",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1,
+      "lineText": "#!/usr/bin/env python3",
+      "resultDataId": 131520772924,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_catalog_freshness has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 699,
+      "lineText": "def validate_catalog_freshness(",
+      "resultDataId": 131520772871,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "catalog_security_schemes is too complex (19) (MC0001)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1375,
+      "lineText": "def catalog_security_schemes(spec: Mapping[str, Any]) -> list[dict[str, Any]]:",
+      "resultDataId": 131520772997,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_schema_references has a cyclomatic complexity of 15 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 526,
+      "lineText": "def validate_schema_references(schema_directory: Path, errors: list[str]) -> None:",
+      "resultDataId": 131520772913,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "tests/test_relution_curl.py",
+      "lineNumber": 42,
+      "lineText": "        result = subprocess.run(",
+      "resultDataId": 131520773047,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/screens.css",
+      "lineNumber": 1,
+      "lineText": "/* Page screens: start, institution, review, readiness/proof-ledger */",
+      "resultDataId": 131520773227,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_all is too complex (33) (MC0001)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 2944,
+      "lineText": "def validate_all(args: argparse.Namespace) -> list[str]:",
+      "resultDataId": 131520772988,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/inspector.css",
+      "lineNumber": 1,
+      "lineText": "/* Inspector dossier panel + definition/detail lists */",
+      "resultDataId": 131520773229,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "PyLintPython3_W0622",
+        "severityLevel": "High",
+        "category": "ErrorProne"
+      },
+      "message": "Redefining built-in 'format'",
+      "filePath": "campusweave/service.py",
+      "lineNumber": 324,
+      "lineText": "    def log_message(self, format: str, *args: object) -> None:  # noqa: A002",
+      "resultDataId": 131520773116,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_change_plan is too complex (163) (MC0001)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1978,
+      "lineText": "def validate_change_plan(",
+      "resultDataId": 131520773000,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method exportArtifact has a cyclomatic complexity of 9 (limit is 8)",
+      "filePath": "web/app/actions.mjs",
+      "lineNumber": 316,
+      "lineText": "  function exportArtifact(kind) {",
+      "resultDataId": 131520773118,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 46,
+      "lineText": "        result = subprocess.run(",
+      "resultDataId": 131520773036,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method render_parameters has a cyclomatic complexity of 10 (limit is 8)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 538,
+      "lineText": "def render_parameters(operation: Operation) -> list[str]:",
+      "resultDataId": 131520772908,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_public_api_registry has 137 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1097,
+      "lineText": "def validate_public_api_registry(",
+      "resultDataId": 131520772928,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B105",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureStorage"
+      },
+      "message": "Possible hardcoded password: 'NEVER_INCLUDE_THIS_TOKEN'",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 185,
+      "lineText": "        secret = \"NEVER_INCLUDE_THIS_TOKEN\"",
+      "resultDataId": 131520773045,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1222,
+      "lineText": "            stale = subprocess.run(",
+      "resultDataId": 131520773040,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "_validate_inventory is too complex (24) (MC0001)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 331,
+      "lineText": "def _validate_inventory(",
+      "resultDataId": 131520772998,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'network' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 64,
+      "lineText": "  network: '<path d=\"M5 8.5a10 10 0 0 1 14 0M8 12a6 6 0 0 1 8 0m-5 4a2 2 0 0 1 2 0M12 20h.01\"/>',",
+      "resultDataId": 131520774312,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_bindings has a cyclomatic complexity of 108 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1341,
+      "lineText": "def validate_bindings(",
+      "resultDataId": 131520772868,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_change_plan_preserves_short_circuit_and_error_order has 74 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 491,
+      "lineText": "    def test_change_plan_preserves_short_circuit_and_error_order(self) -> None:",
+      "resultDataId": 131520772937,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "CampusWeaveHandler._post is too complex (18) (MC0001)",
+      "filePath": "campusweave/service.py",
+      "lineNumber": 462,
+      "lineText": "    def _post(self, path: str) -> None:",
+      "resultDataId": 131520773003,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "PyLintPython3_W0611",
+        "severityLevel": "Warning",
+        "category": "UnusedCode"
+      },
+      "message": "Unused import argparse",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 3,
+      "lineText": "import argparse",
+      "resultDataId": 131520773117,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method build_execution_plan has a cyclomatic complexity of 13 (limit is 8)",
+      "filePath": "scripts/university_runtime/plan.py",
+      "lineNumber": 267,
+      "lineText": "def build_execution_plan(profile: Mapping[str, Any], profile_sha256: str) -> dict[str, Any]:",
+      "resultDataId": 131520772935,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "schema_summary is too complex (19) (MC0001)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 440,
+      "lineText": "def schema_summary(schema: Any) -> str:",
+      "resultDataId": 131520772996,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_json_output_is_deterministic_and_supports_paired_and_json_checks has 71 lines of code (limit is 50)",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 92,
+      "lineText": "    def test_json_output_is_deterministic_and_supports_paired_and_json_checks(self) -> None:",
+      "resultDataId": 131520772954,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B404",
+        "severityLevel": "Info",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "filePath": "tests/test_university_profile.py",
+      "lineNumber": 6,
+      "lineText": "import subprocess",
+      "resultDataId": 131520773032,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_no-unsanitized_property",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Unsafe assignment to innerHTML",
+      "filePath": "web/app/actions.mjs",
+      "lineNumber": 20,
+      "lineText": "    app.innerHTML = renderApp(state)",
+      "resultDataId": 131520774277,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B404",
+        "severityLevel": "Info",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 7,
+      "lineText": "import subprocess",
+      "resultDataId": 131520773050,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'edit' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 62,
+      "lineText": "  edit: '<path d=\"m4 20 4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10zM14 7l3 3\"/>',",
+      "resultDataId": 131520774275,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method validate_change_plan has 847 lines of code (limit is 50)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1978,
+      "lineText": "def validate_change_plan(",
+      "resultDataId": 131520772959,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'home' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 46,
+      "lineText": "  home: '<path d=\"M3 10.7 12 3l9 7.7v9.8a.5.5 0 0 1-.5.5H15v-7H9v7H3.5a.5.5 0 0 1-.5-.5z\"/>',",
+      "resultDataId": 131520774302,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/shell.css",
+      "lineNumber": 1,
+      "lineText": "/* App chrome: seal masthead, phase thread, workspace, status rail */",
+      "resultDataId": 131520773228,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File tests/test_render_relution_openapi.py has 614 non-comment lines of code",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 1,
+      "lineText": "from __future__ import annotations",
+      "resultDataId": 131520772964,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1209,
+      "lineText": "            current = subprocess.run(",
+      "resultDataId": 131520773038,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method (anonymous) has a cyclomatic complexity of 22 (limit is 8)",
+      "filePath": "web/app.js",
+      "lineNumber": 105,
+      "lineText": "window.addEventListener('keydown', (event) => {",
+      "resultDataId": 131520773120,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "tests/test_relution_curl.py",
+      "lineNumber": 33,
+      "lineText": "        return subprocess.run(",
+      "resultDataId": 131520773033,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_javascript.browser.security.insecure-document-method.insecure-document-method",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+      "filePath": "web/app/actions.mjs",
+      "lineNumber": 20,
+      "lineText": "    app.innerHTML = renderApp(state)",
+      "resultDataId": 131520773027,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method test_tier_three_and_external_changes_require_immediate_approval has 54 lines of code (limit is 50)",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 604,
+      "lineText": "    def test_tier_three_and_external_changes_require_immediate_approval(self) -> None:",
+      "resultDataId": 131520772938,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'copy' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 69,
+      "lineText": "  copy: '<rect x=\"8\" y=\"8\" width=\"12\" height=\"12\" rx=\"1\"/><path d=\"M16 8V4H4v12h4\"/>',",
+      "resultDataId": 131520774289,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B101",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "UnexpectedBehaviour"
+      },
+      "message": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "filePath": "tests/test_university_profile.py",
+      "lineNumber": 18,
+      "lineText": "assert spec is not None and spec.loader is not None",
+      "resultDataId": 131520773031,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles/responsive.css",
+      "lineNumber": 1,
+      "lineText": "/* Breakpoints: intermediate 1180px, compact 900px, narrow 520px */",
+      "resultDataId": 131520773233,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "manifest_registry_paths is too complex (23) (MC0001)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 2830,
+      "lineText": "def manifest_registry_paths(",
+      "resultDataId": 131520772994,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B105",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureStorage"
+      },
+      "message": "Possible hardcoded password: 'do-not-reflect-this-credential'",
+      "filePath": "tests/test_campusweave.py",
+      "lineNumber": 264,
+      "lineText": "            package[\"untrusted_secret_field\"] = \"do-not-reflect-this-credential\"",
+      "resultDataId": 131520773046,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B404",
+        "severityLevel": "Info",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 5,
+      "lineText": "import subprocess",
+      "resultDataId": 131520773043,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 19,
+      "lineText": "        return subprocess.run(",
+      "resultDataId": 131520773035,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_bindings is too complex (75) (MC0001)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1341,
+      "lineText": "def validate_bindings(",
+      "resultDataId": 131520773006,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "collect_operations is too complex (18) (MC0001)",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 293,
+      "lineText": "def collect_operations(spec: Mapping[str, Any]) -> list[Operation]:",
+      "resultDataId": 131520772990,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B404",
+        "severityLevel": "Info",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Consider possible security implications associated with the subprocess module.",
+      "filePath": "tests/test_relution_curl.py",
+      "lineNumber": 5,
+      "lineText": "import subprocess",
+      "resultDataId": 131520773042,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_target_context is too complex (76) (MC0001)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 461,
+      "lineText": "def validate_target_context(",
+      "resultDataId": 131520772995,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Stylelint_scss_function-disallowed-list",
+        "severityLevel": "Warning",
+        "category": "BestPractice"
+      },
+      "message": "Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?",
+      "filePath": "web/styles.css",
+      "lineNumber": 1,
+      "lineText": "/* CampusWeave Academic Ledger - modular stylesheet entry */",
+      "resultDataId": 131520773234,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B603",
+        "severityLevel": "Warning",
+        "category": "Security",
+        "subCategory": "InputValidation"
+      },
+      "message": "subprocess call - check for execution of untrusted input.",
+      "filePath": "scripts/university_runtime/cli.py",
+      "lineNumber": 217,
+      "lineText": "    completed = subprocess.run(command, cwd=REPOSITORY_ROOT, check=False)",
+      "resultDataId": 131520773037,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B105",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureStorage"
+      },
+      "message": "Possible hardcoded password: 'dummy-relution-token-for-pipe-test'",
+      "filePath": "tests/test_relution_curl.py",
+      "lineNumber": 15,
+      "lineText": "DUMMY_TOKEN = \"dummy-relution-token-for-pipe-test\"",
+      "resultDataId": 131520773034,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _origin has 51 lines of code (limit is 50)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 131,
+      "lineText": "def _origin(value: Any, location: str, errors: list[str]) -> str | None:",
+      "resultDataId": 131520772866,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "_validate_profile_binding_coverage is too complex (19) (MC0001)",
+      "filePath": "scripts/university_runtime/target.py",
+      "lineNumber": 244,
+      "lineText": "def _validate_profile_binding_coverage(",
+      "resultDataId": 131520772999,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "PyLintPython3_W0106",
+        "severityLevel": "High",
+        "category": "ErrorProne"
+      },
+      "message": "Expression \"seen_authorities.add(authority) if isinstance(authority, str) else None\" is assigned to nothing",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 794,
+      "lineText": "        seen_authorities.add(authority) if isinstance(authority, str) else None",
+      "resultDataId": 131520773115,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Bandit_B101",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "UnexpectedBehaviour"
+      },
+      "message": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "filePath": "scripts/render_relution_openapi.py",
+      "lineNumber": 1999,
+      "lineText": "                assert args.json_output is not None and machine_catalog is not None",
+      "resultDataId": 131520773041,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "concept_ids_from_manifest is too complex (22) (MC0001)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 646,
+      "lineText": "def concept_ids_from_manifest(manifest_path: Path, errors: list[str]) -> set[str]:",
+      "resultDataId": 131520773002,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Prospector_mccabe",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "validate_package is too complex (191) (MC0001)",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 710,
+      "lineText": "def validate_package(document: Any, concept_ids: set[str]) -> list[str]:",
+      "resultDataId": 131520773004,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_file-nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "File scripts/university_profile.py has 1418 non-comment lines of code",
+      "filePath": "scripts/university_profile.py",
+      "lineNumber": 1,
+      "lineText": "#!/usr/bin/env python3",
+      "resultDataId": 131520772857,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_ccn-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method _validate_change_plan_operation_roles has a cyclomatic complexity of 20 (limit is 8)",
+      "filePath": "scripts/validate_machine_docs.py",
+      "lineNumber": 1884,
+      "lineText": "def _validate_change_plan_operation_roles(",
+      "resultDataId": 131520772900,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Lizard_nloc-medium",
+        "severityLevel": "Warning",
+        "category": "Complexity"
+      },
+      "message": "Method renderReadiness has 63 lines of code (limit is 50)",
+      "filePath": "web/views/screens.mjs",
+      "lineNumber": 167,
+      "lineText": "  const profileExported = state.exportedProfileSha256 === state.bundle.profile_sha256",
+      "resultDataId": 131520773123,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'chevron' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 56,
+      "lineText": "  chevron: '<path d=\"m9 18 6-6-6-6\"/>',",
+      "resultDataId": 131520774308,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Detected subprocess function 'run' without a static string.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1209,
+      "lineText": "            current = subprocess.run(",
+      "resultDataId": 131520774593,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'groups' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 49,
+      "lineText": "  groups: '<circle cx=\"9\" cy=\"8\" r=\"3\"/><circle cx=\"17\" cy=\"9\" r=\"2.5\"/><path d=\"M3 20v-2a5 5 0 0 1 10 0v2M13 15a4.5 4.5 0 0 1 8 3v2\"/>',",
+      "resultDataId": 131520774297,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'close' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 71,
+      "lineText": "  close: '<path d=\"m6 6 12 12M18 6 6 18\"/>',",
+      "resultDataId": 131520774295,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'database' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 65,
+      "lineText": "  database: '<ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6\"/>',",
+      "resultDataId": 131520774298,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'review' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 53,
+      "lineText": "  review: '<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"m8 9 2 2 4-4m-6 9 2 2 4-4\"/>',",
+      "resultDataId": 131520774300,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'link' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 66,
+      "lineText": "  link: '<path d=\"M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2\"/>',",
+      "resultDataId": 131520774280,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'organization' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 48,
+      "lineText": "  organization: '<circle cx=\"12\" cy=\"5\" r=\"2.5\"/><circle cx=\"5\" cy=\"18\" r=\"2.5\"/><circle cx=\"19\" cy=\"18\" r=\"2.5\"/><path d=\"M12 7.5v4M5 15.5v-4h14v4\"/>',",
+      "resultDataId": 131520774278,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Detected subprocess function 'run' without a static string.",
+      "filePath": "scripts/university_runtime/cli.py",
+      "lineNumber": 217,
+      "lineText": "    completed = subprocess.run(command, cwd=REPOSITORY_ROOT, check=False)",
+      "resultDataId": 131520774589,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Detected subprocess function 'run' without a static string.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 46,
+      "lineText": "        result = subprocess.run(",
+      "resultDataId": 131520774587,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML function 'renderPolicies' returns HTML content",
+      "filePath": "web/views/screens.mjs",
+      "lineNumber": 113,
+      "lineText": "  return `<section class=\"screen\">",
+      "resultDataId": 131520774299,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_security_detect-object-injection",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureModulesLibraries"
+      },
+      "message": "Generic Object Injection Sink",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 38,
+      "lineText": "  if (DISPLAY_VALUES[source]) return DISPLAY_VALUES[source]",
+      "resultDataId": 131520774304,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'download' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 61,
+      "lineText": "  download: '<path d=\"M12 3v13m0 0 5-5m-5 5-5-5M4 21h16\"/>',",
+      "resultDataId": 131520774274,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'policy' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 59,
+      "lineText": "  policy: '<path d=\"M12 3v18M5 7h14M5 12h14M5 17h14\"/>',",
+      "resultDataId": 131520774301,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Unencoded return value from function 'renderApp' used in HTML context",
+      "filePath": "web/app/actions.mjs",
+      "lineNumber": 20,
+      "lineText": "    app.innerHTML = renderApp(state)",
+      "resultDataId": 131520774292,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Detected subprocess function 'run' without a static string.",
+      "filePath": "tests/test_machine_docs.py",
+      "lineNumber": 1222,
+      "lineText": "            stale = subprocess.run(",
+      "resultDataId": 131520774590,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_python.lang.security.audit.insecure-file-permissions.insecure-file-permissions",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "FileAccess"
+      },
+      "message": "These permissions `0o700` are widely permissive and grant access to more people than may be necessary.",
+      "filePath": "tests/test_university_runtime.py",
+      "lineNumber": 67,
+      "lineText": "        os.chmod(root, 0o700)",
+      "resultDataId": 131520774591,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_security_detect-object-injection",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureModulesLibraries"
+      },
+      "message": "Function Call Object Injection Sink",
+      "filePath": "web/model/serialize.mjs",
+      "lineNumber": 14,
+      "lineText": "      Object.keys(value).sort().map((key) => [key, sortJson(value[key])]),",
+      "resultDataId": 131520774311,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'user' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 67,
+      "lineText": "  user: '<circle cx=\"12\" cy=\"7\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>',",
+      "resultDataId": 131520774310,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML function 'detailList' returns HTML content",
+      "filePath": "web/views/inspectors.mjs",
+      "lineNumber": 16,
+      "lineText": "  return `<section class=\"inspector-section\"><h3>${escapeHtml(title)}</h3><ul class=\"detail-list\">${values.map((value) => `<li>${icon('check')}<span>${escapeHtml(value)}</span></li>`).join('') || '<li class=\"muted\">None declared</li>'}</ul></section>`",
+      "resultDataId": 131520774305,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'readiness' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 52,
+      "lineText": "  readiness: '<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 3.5V2h6v1.5M8 9h8M8 13h5M8 17h3\"/>',",
+      "resultDataId": 131520774303,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Detected subprocess function 'run' without a static string.",
+      "filePath": "tests/test_render_relution_openapi.py",
+      "lineNumber": 19,
+      "lineText": "        return subprocess.run(",
+      "resultDataId": 131520774592,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'terminal' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 68,
+      "lineText": "  terminal: '<path d=\"m4 6 5 5-5 5M11 17h9\"/>',",
+      "resultDataId": 131520774306,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'upload' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 54,
+      "lineText": "  upload: '<path d=\"M12 16V3m0 0L7 8m5-5 5 5M4 14v6h16v-6\"/>',",
+      "resultDataId": 131520774284,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'check' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 55,
+      "lineText": "  check: '<path d=\"m5 12 4 4L19 6\"/>',",
+      "resultDataId": 131520774293,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "Semgrep_python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+        "severityLevel": "Error",
+        "category": "Security",
+        "subCategory": "CommandInjection"
+      },
+      "message": "Detected subprocess function 'run' without a static string.",
+      "filePath": "tests/test_university_profile.py",
+      "lineNumber": 36,
+      "lineText": "        result = subprocess.run(",
+      "resultDataId": 131520774588,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_security_detect-object-injection",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureModulesLibraries"
+      },
+      "message": "Generic Object Injection Sink",
+      "filePath": "web/app.js",
+      "lineNumber": 88,
+      "lineText": "  state.filters[filter] = control.value",
+      "resultDataId": 131520774291,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'institution' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 47,
+      "lineText": "  institution: '<path d=\"M3 9h18M5 9v9m4-9v9m6-9v9m4-9v9M2 21h20M12 3 3 7h18z\"/>',",
+      "resultDataId": 131520774309,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'search' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 57,
+      "lineText": "  search: '<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-4-4\"/>',",
+      "resultDataId": 131520774296,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'menu' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 70,
+      "lineText": "  menu: '<path d=\"M4 7h16M4 12h16M4 17h16\"/>',",
+      "resultDataId": 131520774285,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'folder' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 58,
+      "lineText": "  folder: '<path d=\"M3 6.5h6l2 2h10v10.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/>',",
+      "resultDataId": 131520774281,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_security_detect-object-injection",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "InsecureModulesLibraries"
+      },
+      "message": "Generic Object Injection Sink",
+      "filePath": "web/app.js",
+      "lineNumber": 56,
+      "lineText": "    state.selected[section] = control.dataset.id",
+      "resultDataId": 131520774276,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML function 'navigation' returns HTML content",
+      "filePath": "web/views/shell.mjs",
+      "lineNumber": 38,
+      "lineText": "  return `<nav id=\"workflow-navigation\" class=\"step-rail ${state.navigationOpen ? 'open' : ''}\" aria-label=\"CampusWeave workflow\" ${closedCompact ? 'inert aria-hidden=\"true\"' : ''}><div class=\"mobile-nav-title\"><strong>Workflow steps</strong><button id=\"workflow-close\" class=\"icon-button\" data-action=\"toggle-navigation\" aria-label=\"Close workflow navigation\">${icon('close')}</button></div>${STEPS.map(([id, label, iconName], index) => `<button data-action=\"navigate\" data-step=\"${id}\" class=\"step-button ${sta",
+      "resultDataId": 131520774288,
+      "falsePositiveThreshold": 80
+    },
+    {
+      "patternInfo": {
+        "id": "ESLint8_xss_no-mixed-html",
+        "severityLevel": "High",
+        "category": "Security",
+        "subCategory": "XSS"
+      },
+      "message": "Non-HTML variable 'assignment' is used to store raw HTML",
+      "filePath": "web/views/html.mjs",
+      "lineNumber": 51,
+      "lineText": "  assignment: '<circle cx=\"8\" cy=\"8\" r=\"3\"/><path d=\"M2.5 20v-2.5A4.5 4.5 0 0 1 7 13h2a4.5 4.5 0 0 1 4.3 3.2M15 8h6m-3-3v6M16 17l2 2 4-5\"/>',",
+      "resultDataId": 131520774286,
+      "falsePositiveThreshold": 80
+    }
+  ]
+}

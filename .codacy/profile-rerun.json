@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "startedAt": "2026-07-28T05:47:51.913Z",
+    "completedAt": "2026-07-28T05:47:54.988Z",
+    "durationMs": 3075,
+    "repositoryRoot": "/Users/sebastian/Git/campusweave",
+    "executionMode": "standard",
+    "phaseTimings": {
+      "availabilityMs": 939,
+      "fileDiscoveryMs": 65,
+      "fileRoutingMs": 3,
+      "toolExecutionMs": 2034,
+      "installMs": 0
+    }
+  },
+  "capability": {
+    "ready": [
+      {
+        "toolId": "Lizard",
+        "displayName": "Lizard",
+        "version": "1.21.2",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 1,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "Prospector",
+        "displayName": "Prospector",
+        "version": "1.18.0",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 1,
+        "configSource": "codacy"
+      },
+      {
+        "toolId": "PyLintPython3",
+        "displayName": "Pylint",
+        "version": "3.3.9",
+        "installation": "codacy",
+        "runner": "local",
+        "filesRouted": 1,
+        "configSource": "local",
+        "configPath": "/Users/sebastian/Git/campusweave/pyproject.toml"
+      }
+    ],
+    "unavailable": [],
+    "checkedAt": "2026-07-28T05:47:52.885Z"
+  },
+  "issues": [
+    {
+      "filePath": "scripts/university_profile.py",
+      "patternId": "Lizard_ccn-medium",
+      "toolId": "Lizard",
+      "line": 668,
+      "column": 1,
+      "endLine": 698,
+      "message": "_contained_registry_path has a cyclomatic complexity of 9 (threshold: 8)",
+      "lineContent": "",
+      "category": "Complexity",
+      "severity": "Warning"
+    },
+    {
+      "filePath": "scripts/university_profile.py",
+      "patternId": "Lizard_nloc-medium",
+      "toolId": "Lizard",
+      "line": 747,
+      "column": 1,
+      "endLine": 1491,
+      "message": "validate_package has a NLOC of 725 (threshold: 50)",
+      "lineContent": "",
+      "category": "Complexity",
+      "severity": "Warning"
+    },
+    {
+      "filePath": "scripts/university_profile.py",
+      "patternId": "Lizard_ccn-medium",
+      "toolId": "Lizard",
+      "line": 747,
+      "column": 1,
+      "endLine": 1491,
+      "message": "validate_package has a cyclomatic complexity of 308 (threshold: 8)",
+      "lineContent": "",
+      "category": "Complexity",
+      "severity": "Warning"
+    },
+    {
+      "filePath": "scripts/university_profile.py",
+      "patternId": "Lizard_file-nloc-medium",
+      "toolId": "Lizard",
+      "line": 1,
+      "column": 1,
+      "message": "File has 1442 lines of code (threshold: 500)",
+      "lineContent": "",
+      "category": "Complexity",
+      "severity": "Warning"
+    },
+    {
+      "filePath": "scripts/university_profile.py",
+      "patternId": "Prospector_mccabe",
+      "toolId": "Prospector",
+      "line": 747,
+      "column": 1,
+      "message": "validate_package is too complex (192) (MC0001)",
+      "lineContent": "def validate_package(document: Any, concept_ids: set[str]) -> list[str]:",
+      "category": "Complexity",
+      "severity": "Warning"
+    }
+  ],
+  "errors": [],
+  "toolResults": [
+    {
+      "toolId": "Lizard",
+      "status": "success",
+      "issueCount": 4,
+      "errorCount": 0,
+      "durationMs": 93,
+      "filesAnalyzed": 1
+    },
+    {
+      "toolId": "Prospector",
+      "status": "success",
+      "issueCount": 1,
+      "errorCount": 0,
+      "durationMs": 463,
+      "filesAnalyzed": 1
+    },
+    {
+      "toolId": "PyLintPython3",
+      "status": "success",
+      "issueCount": 0,
+      "errorCount": 0,
+      "durationMs": 1475,
+      "filesAnalyzed": 1
+    }
+  ],
+  "patternSummary": {
+    "groups": [
+      {
+        "severity": "Warning",
+        "severityLabel": "WARNING",
+        "category": "Complexity",
+        "categoryLabel": "Complexity",
+        "patterns": [
+          {
+            "patternId": "Lizard_ccn-medium",
+            "title": "Enforce Medium Cyclomatic Complexity Threshold",
+            "toolId": "Lizard",
+            "toolDisplayName": "Lizard",
+            "category": "Complexity",
+            "severity": "Warning",
+            "issueCount": 2,
+            "fileCount": 1,
+            "noisy": false
+          },
+          {
+            "patternId": "Lizard_nloc-medium",
+            "title": "Enforce Medium Number of Lines of Code (NLOC) Limit",
+            "toolId": "Lizard",
+            "toolDisplayName": "Lizard",
+            "category": "Complexity",
+            "severity": "Warning",
+            "issueCount": 1,
+            "fileCount": 1,
+            "noisy": false
+          },
+          {
+            "patternId": "Lizard_file-nloc-medium",
+            "title": "Enforce Medium File Length Limit Based on Number of Lines of Code",
+            "toolId": "Lizard",
+            "toolDisplayName": "Lizard",
+            "category": "Complexity",
+            "severity": "Warning",
+            "issueCount": 1,
+            "fileCount": 1,
+            "noisy": false
+          },
+          {
+            "patternId": "Prospector_mccabe",
+            "title": "Enforce Cyclomatic Complexity Threshold",
+            "toolId": "Prospector",
+            "toolDisplayName": "Prospector",
+            "category": "Complexity",
+            "severity": "Warning",
+            "issueCount": 1,
+            "fileCount": 1,
+            "noisy": false
+          }
+        ],
+        "totalIssues": 5,
+        "totalPatterns": 4
+      }
+    ],
+    "totalIssues": 5,
+    "totalPatterns": 4,
+    "noisyPatternCount": 0,
+    "noisyThreshold": 500
+  }
+}
