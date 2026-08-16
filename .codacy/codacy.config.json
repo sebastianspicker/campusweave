@@ -1,18 +1,18 @@
 {
   "version": 1,
   "metadata": {
-    "source": "default",
-    "provider": null,
-    "organization": null,
-    "repositoryId": null,
-    "repositoryName": null,
-    "createdAt": "2026-07-28T05:37:25.884Z",
-    "updatedAt": "2026-07-28T05:37:25.884Z",
+    "source": "remote",
+    "provider": "gh",
+    "organization": "sebastianspicker",
+    "repositoryId": "892848",
+    "repositoryName": "campusweave",
+    "createdAt": "2026-08-15T08:29:24.743Z",
+    "updatedAt": "2026-08-15T08:29:24.743Z",
     "languages": [
       "CSS",
       "HTML",
-      "JSON",
       "Javascript",
+      "JSON",
       "Markdown",
       "Python",
       "YAML"
