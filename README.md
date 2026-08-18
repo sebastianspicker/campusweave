@@ -274,7 +274,7 @@ does not support a configurable host, port, reverse proxy, service manager, or
 multi-user deployment.
 
 The release procedure publishes source only and is currently blocked by the
-missing license, uncommitted candidate, and unverified remote CI.
+missing license, no designated release candidate, and unverified remote CI.
 See [`RELEASING.md`](RELEASING.md).
 
 ## Troubleshooting

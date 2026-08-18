@@ -28,7 +28,7 @@ These results cover the local source candidate only.
 ## Not verified
 
 - remote GitHub Actions;
-- a committed or tagged candidate;
+- a designated release candidate commit or tag;
 - package, installer, container, or executable distribution;
 - live browser keyboard, screen-reader, accessibility-tree, and zoom behavior;
 - compatibility with a live Relution instance;
@@ -38,7 +38,7 @@ These results cover the local source candidate only.
 ## Publication blockers
 
 - No public license has been selected.
-- The current source candidate has not been committed or tagged.
+- No release candidate commit or tag is designated.
 - GitHub Actions has not been verified for the exact candidate commit.
 - No tag or release exists.
 - Browser accessibility checks remain incomplete.

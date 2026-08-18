@@ -33,6 +33,7 @@ docs/relution/observations/
 /*.audit.json
 
 # Tool and editor state
+/.mcp.json
 /.serena/
 /.claude/
 /.continue/
@@ -127,8 +128,7 @@ xcuserdata/
 *.sqlite3-wal
 
 # Codacy local generated state
-.codacy/tools-configs/
-.codacy/cli-config.yaml
+/.codacy/
 
 # Keep the CodeGraph sentinel itself local as well as its generated contents.
 .codegraph/
