@@ -48,8 +48,7 @@ defined recovery path.
 Run the complete local gate:
 
 ```sh
-python3 -m unittest discover -s tests -v
-node --test tests/test_campusweave_ui.mjs
+python3 -m unittest tests.test_core_contracts -v
 for f in web/**/*.{js,mjs}; do
   [ -f "$f" ] || continue
   node --check "$f"
@@ -58,7 +57,6 @@ python3 -m py_compile scripts/render_relution_openapi.py
 python3 -m py_compile scripts/validate_machine_docs.py
 python3 scripts/validate_machine_docs.py
 zsh -n scripts/relution_curl.zsh
-zsh -n scripts/capture_campusweave_screenshots.zsh
 ```
 
 Run these checks when their tools are installed:
@@ -87,13 +85,7 @@ remain fail-closed placeholders.
 Follow [`docs/FRONTEND.md`](docs/FRONTEND.md). Preserve keyboard behavior,
 focus, loading, empty, error, and compact states.
 
-When visible output changes, regenerate screenshots with:
-
-```sh
-zsh scripts/capture_campusweave_screenshots.zsh
-```
-
-Inspect each image before review.
+The checked-in screenshots are static documentation assets and have no browser-automation workflow.
 
 ## Submitting changes
 

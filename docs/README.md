@@ -10,7 +10,7 @@ target-derived contracts, inventories, evidence, and credentials.
 - [Project overview](../README.md) explains the local web interface, offline
   runtime, and OpenAPI catalog workflow.
 - [Browser workbench](FRONTEND.md) describes the static interface, routes,
-  accessibility expectations, and screenshot procedure.
+  and accessibility expectations.
 - [Relution handbook](relution/README.md) explains the documentation boundary
   and the distinction between public concepts and target-specific evidence.
 - [Release status](../RELEASE_STATUS.md) records local verification and the

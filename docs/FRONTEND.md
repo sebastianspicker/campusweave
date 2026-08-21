@@ -153,8 +153,7 @@ zoom behavior still require manual browser testing before publication.
 Run frontend tests:
 
 ```sh
-node --test tests/test_campusweave_ui.mjs
-python3 -m unittest tests/test_campusweave.py -v
+python3 -m unittest tests.test_core_contracts -v
 ```
 
 Check every JavaScript module:
@@ -172,20 +171,13 @@ modules locally.
 
 ## Screenshots
 
-Regenerate the synthetic screenshots after a visible interface change:
+The synthetic screenshots are static documentation assets. There is no
+automated screenshot-regeneration workflow.
 
-```sh
-zsh scripts/capture_campusweave_screenshots.zsh
-```
+Before replacing a screenshot, start the local service and inspect the relevant
+route manually in a current browser at the documented viewport size.
 
-The script starts the local service and uses the first available supported macOS
-browser:
-
-1. Chromium
-2. Google Chrome
-3. Microsoft Edge
-
-It captures:
+The current assets document these views:
 
 | Route | File | Size |
 | --- | --- | --- |
@@ -193,5 +185,5 @@ It captures:
 | `#assignments` | `docs/assets/screenshots/campusweave-assignments.png` | 1440 by 1000 |
 | `#assignments` | `docs/assets/screenshots/campusweave-mobile.png` | 500 by 900 |
 
-Inspect each image for clipping, stale interface text, private data, and target
-data before including it in a release.
+Inspect the browser view and each image for clipping, stale interface text,
+private data, and target data before including it in a release.

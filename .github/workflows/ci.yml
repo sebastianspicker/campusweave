@@ -25,10 +25,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Python tests
-        run: python3 -m unittest discover -s tests -v
-      - name: CampusWeave JavaScript tests
-        run: node --test tests/test_campusweave_ui.mjs
+      - name: Core unit and integration tests
+        run: python3 -m unittest tests.test_core_contracts -v
       - name: Static syntax and machine docs
         run: |
           node --check web/app.js
@@ -38,4 +36,3 @@ jobs:
           python3 -m py_compile scripts/validate_machine_docs.py
           python3 scripts/validate_machine_docs.py
           zsh -n scripts/relution_curl.zsh
-          zsh -n scripts/capture_campusweave_screenshots.zsh

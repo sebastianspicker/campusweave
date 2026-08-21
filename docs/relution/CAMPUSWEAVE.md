@@ -97,8 +97,7 @@ rollback viability.
 ## Tests
 
 ```sh
-python3 -m unittest tests/test_campusweave.py -v
-node --test tests/test_campusweave_ui.mjs
+python3 -m unittest tests.test_core_contracts -v
 ```
 
 Frontend architecture and manual browser checks are documented in

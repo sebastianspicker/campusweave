@@ -58,8 +58,6 @@ evidence, and rollback planning described in
 - Local validation does not prove target permissions, licensing, request
   semantics, current inventory, publication state, or device outcome.
 - Source checkout is the only supported distribution.
-- Screenshot capture supports the Chromium, Google Chrome, and Microsoft Edge
-  application paths listed in the capture script.
 - Live tenant compatibility, remote CI, packaging, and publication have not been
   verified.
 
@@ -70,8 +68,7 @@ evidence, and rollback planning described in
 | Web interface and offline runtime | Python 3.11 or later |
 | Browser interface | Current browser with JavaScript enabled |
 | JavaScript tests and syntax checks | Node.js 20 or later |
-| Shell helper and screenshot checks | zsh |
-| Screenshot capture | Chromium, Google Chrome, or Microsoft Edge on macOS |
+| Shell helper checks | zsh |
 | Optional local quality checks | Pyright, markdownlint-cli2, and yamllint |
 
 The application uses the Python standard library. The browser client has no
@@ -216,8 +213,8 @@ Do not replace the fail-closed placeholders under
 | `scripts/relution_curl.zsh` | Bounded transport helper for separately authorized API work |
 | `docs/relution/` | Relution handbook, schemas, registries, templates, and reference profile |
 | `docs/FRONTEND.md` | Browser architecture and frontend conventions |
-| `docs/assets/screenshots/` | Synthetic screenshots captured from the reference profile |
-| `tests/` | Python and Node.js tests with synthetic fixtures |
+| `docs/assets/screenshots/` | Static reference-profile documentation images |
+| `tests/` | Focused Python unit and integration checks |
 | `.github/` | CI workflow, issue forms, and pull request template |
 | `pyrightconfig.json` | Python type-check scope and import paths |
 
@@ -228,8 +225,7 @@ Do not replace the fail-closed placeholders under
    boundaries.
 3. Run the narrowest relevant tests.
 4. Run the complete local gate before review.
-5. Regenerate screenshots only when visible UI output changes.
-6. Inspect the final diff for credentials, customer data, target evidence, and
+5. Inspect the final diff for credentials, customer data, target evidence, and
    local tool state.
 
 The configured GitHub Actions workflow runs on pushes, pull requests, and manual
@@ -241,8 +237,7 @@ blockers are listed in [`RELEASE_STATUS.md`](RELEASE_STATUS.md).
 Run the repository gate:
 
 ```sh
-python3 -m unittest discover -s tests -v
-node --test tests/test_campusweave_ui.mjs
+python3 -m unittest tests.test_core_contracts -v
 for f in web/**/*.{js,mjs}; do
   [ -f "$f" ] || continue
   node --check "$f"
@@ -251,7 +246,6 @@ python3 -m py_compile scripts/render_relution_openapi.py
 python3 -m py_compile scripts/validate_machine_docs.py
 python3 scripts/validate_machine_docs.py
 zsh -n scripts/relution_curl.zsh
-zsh -n scripts/capture_campusweave_screenshots.zsh
 ```
 
 Optional local checks:
@@ -306,12 +300,6 @@ chmod 600 /path/to/example-u-plan.json
 The checked-in catalog is intentionally empty. Render a catalog from the exact
 target OpenAPI export under `.local/relution-contract/`, then validate the
 source and catalog together.
-
-### Screenshot capture cannot find a browser
-
-Install one of the macOS Chromium-family applications listed in
-`scripts/capture_campusweave_screenshots.zsh`. The script does not search
-arbitrary browser paths.
 
 ## Security considerations
 

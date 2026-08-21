@@ -12,15 +12,13 @@ repository contains no credentials, tenant identifiers, target-derived
 contracts, inventories, request or response captures, audit exports, private
 plans, or local tool state.
 
-If the visible browser interface changed, regenerate the three synthetic
-screenshots with:
+The three synthetic screenshots are static documentation assets. Review the
+relevant local routes manually in a current browser before replacing them;
+there is no automated screenshot-regeneration workflow.
 
-```sh
-zsh scripts/capture_campusweave_screenshots.zsh
-```
-
-Inspect them for private data before review. Screenshot generation is a local
-capture step, not browser accessibility, tenant, device, or deployment proof.
+Inspect the browser views and images for private data before review. The images
+are documentation evidence, not browser accessibility, tenant, device, or
+deployment proof.
 
 ## Do not infer publication
 

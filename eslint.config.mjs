@@ -18,7 +18,6 @@ export default [
     languageOptions: { globals: browserGlobals },
   },
   {
-    files: ['tests/test_campusweave_ui.mjs'],
     languageOptions: {
       globals: {
         URL: 'readonly',
