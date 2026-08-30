@@ -5,6 +5,8 @@ Reference University profile. A successful validation proves only local
 artifact consistency. It does not prove target access, current inventory,
 request semantics, or device outcomes.
 
+Run adapter commands after `python3 -m pip install --editable .`.
+
 ## Profile and plan checks
 
 ```sh
