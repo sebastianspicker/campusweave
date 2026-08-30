@@ -24,7 +24,8 @@ python3 scripts/render_relution_openapi.py \
   --check
 ```
 
-Run `python3 scripts/validate_machine_docs.py` for the checked-in schemas,
+Run `python3 scripts/validate_machine_docs.py` after editable installation for
+the checked-in schemas,
 registries, templates, bindings, and fail-closed catalog placeholder.
 
 ## Checked-in catalog

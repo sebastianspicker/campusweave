@@ -9,12 +9,11 @@ target-derived contracts, inventories, evidence, and credentials.
 
 - [Project overview](../README.md) explains the local web interface, offline
   runtime, and OpenAPI catalog workflow.
+- [Architecture](ARCHITECTURE.md) explains the package layers and adapter rule.
 - [Browser workbench](FRONTEND.md) describes the static interface, routes,
   and accessibility expectations.
 - [Relution handbook](relution/README.md) explains the documentation boundary
   and the distinction between public concepts and target-specific evidence.
-- [Release status](../RELEASE_STATUS.md) records local verification and the
-  remaining publication blockers.
 
 ## Reference material
 
@@ -23,8 +22,6 @@ target-derived contracts, inventories, evidence, and credentials.
 - [Catalog notes](catalog-notes.md) covers the local OpenAPI catalog workflow.
 - [Compiler checks](compiler-checks.md) lists the deterministic validation
   commands.
-- [Release cleanup](release-cleanup.md) lists public-data and release-candidate
-  review requirements.
 
 Use only checked-in synthetic inputs in public documentation. Keep authorized
 target contracts and resulting evidence in the ignored

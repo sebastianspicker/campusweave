@@ -14,7 +14,7 @@ python3 -m campusweave
 
 The service binds to `127.0.0.1:8766`. It does not support another host or port.
 Static files are served from an explicit allowlist in
-`campusweave/service.py`.
+`campusweave/server.py`.
 
 The browser uses these local endpoints:
 
@@ -145,15 +145,16 @@ Frontend changes must preserve:
 - text wrapping without document-level horizontal overflow; and
 - selected details near their controls in compact layouts.
 
-The target is WCAG 2.2 AA. Screen-reader output, accessibility-tree order, and
-zoom behavior still require manual browser testing before publication.
+The target is WCAG 2.2 AA. Check screen-reader output, accessibility-tree order,
+keyboard use, and zoom behavior manually before release.
 
 ## Development and testing
 
 Run frontend tests:
 
 ```sh
-python3 -m unittest tests.test_core_contracts -v
+npm test
+npm run lint
 ```
 
 Check every JavaScript module:
@@ -165,25 +166,8 @@ for f in web/**/*.{js,mjs}; do
 done
 ```
 
-The GitHub Actions workflow runs the Node.js suite and checks the public entry
-files `app.js`, `model.mjs`, and `views.mjs`. The broader loop above checks all
-modules locally.
-
-## Screenshots
-
-The synthetic screenshots are static documentation assets. There is no
-automated screenshot-regeneration workflow.
-
-Before replacing a screenshot, start the local service and inspect the relevant
-route manually in a current browser at the documented viewport size.
-
-The current assets document these views:
-
-| Route | File | Size |
-| --- | --- | --- |
-| `#start` | `docs/assets/screenshots/campusweave-overview.png` | 1440 by 1000 |
-| `#assignments` | `docs/assets/screenshots/campusweave-assignments.png` | 1440 by 1000 |
-| `#assignments` | `docs/assets/screenshots/campusweave-mobile.png` | 500 by 900 |
-
-Inspect the browser view and each image for clipping, stale interface text,
-private data, and target data before including it in a release.
+The GitHub Actions workflow installs the locked Node toolchain, runs the semantic
+frontend tests and ESLint, then checks every JavaScript module. It also runs the
+Python behavior and architecture suite, Ruff lint and format checks, Pyright,
+Python syntax checks, machine-contract validation, and zsh transport syntax. The
+same commands are the repository gate in the root README.
