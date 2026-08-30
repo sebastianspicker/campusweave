@@ -196,7 +196,7 @@
   opacity: 0.95;
 }
 
-/* Phase label + dots (Academic Ledger thread) */
+/* Phase labels and progress markers. */
 .journey-label {
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@
   color: inherit;
 }
 
-/* Prefer the explicit journey-dot; hide empty legacy journey-icon when both exist */
+/* The empty icon span preserves alignment while the dot supplies the marker. */
 .journey-label .journey-dot + .journey-icon { display: none; }
 
 .journey-icon .icon { display: none; }
